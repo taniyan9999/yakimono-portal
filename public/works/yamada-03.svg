@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#A0522D"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Bottle (tokkuri) silhouette -->
+  <path d="M185,310 C160,305 150,290 148,260 C146,230 150,200 148,170 C146,150 155,130 165,115 C170,108 175,100 178,90 C180,82 182,72 185,65 C190,58 195,55 200,54 C205,55 210,58 215,65 C218,72 220,82 222,90 C225,100 230,108 235,115 C245,130 254,150 252,170 C250,200 254,230 252,260 C250,290 240,305 215,310 Z" fill="rgba(255,248,230,0.85)"/>
+  <ellipse cx="200" cy="54" rx="18" ry="6" fill="rgba(255,248,230,0.85)"/>
+  <ellipse cx="200" cy="310" rx="18" ry="5" fill="rgba(255,248,230,0.85)"/>
+  <text x="200" y="360" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">胡麻徳利</text>
+  <text x="200" y="385" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">Bizen-yaki</text>
+</svg>

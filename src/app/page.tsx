@@ -1,207 +1,269 @@
-const regions = [
-  {
-    name: "有田焼",
-    area: "佐賀県有田町",
-    description: "白磁に鮮やかな絵付けが特徴。400年以上の歴史を持つ日本を代表する磁器。",
-  },
-  {
-    name: "備前焼",
-    area: "岡山県備前市",
-    description: "釉薬を使わず、土と炎だけで生まれる素朴で力強い焼き締めの器。",
-  },
-  {
-    name: "信楽焼",
-    area: "滋賀県甲賀市",
-    description: "温かみのある土の風合いが魅力。たぬきの置物でも広く知られる。",
-  },
-  {
-    name: "益子焼",
-    area: "栃木県益子町",
-    description: "厚手で素朴な味わいが特徴。民藝運動とともに発展した実用の美。",
-  },
-  {
-    name: "萩焼",
-    area: "山口県萩市",
-    description: "柔らかな色合いと「萩の七化け」と呼ばれる経年変化が愛される茶陶。",
-  },
-  {
-    name: "九谷焼",
-    area: "石川県加賀市",
-    description: "大胆な構図と鮮やかな五彩が特徴の、華やかで格調高い色絵磁器。",
-  },
+import Link from "next/link";
+import Image from "next/image";
+import { supabase } from "@/lib/supabase";
+import { type Craft, categoryMeta, categoryOrder, defaultMeta, areaRegions } from "@/lib/crafts";
+import SearchBar from "@/components/SearchBar";
+import JapanRegionMap from "@/components/JapanRegionMap";
+
+// ヒーロー背景画像（Unsplash - 伝統工芸）
+const heroImages = [
+  { src: "https://images.unsplash.com/photo-1664477407933-dd42ed0c6c62?auto=format&fit=crop&w=600&q=80", alt: "Japanese pottery" },
+  { src: "https://images.unsplash.com/photo-1680817318163-4f72c021b820?auto=format&fit=crop&w=600&q=80", alt: "Traditional crafts" },
+  { src: "https://images.unsplash.com/photo-1682159316104-70c98a792e94?auto=format&fit=crop&w=600&q=80", alt: "Ceramics" },
+  { src: "https://images.unsplash.com/photo-1670672013421-ec17c92a66d8?auto=format&fit=crop&w=600&q=80", alt: "Traditional pottery" },
+  { src: "https://images.unsplash.com/photo-1572766736431-e4640ff4da3f?auto=format&fit=crop&w=600&q=80", alt: "Japanese ceramic art" },
+  { src: "https://images.unsplash.com/photo-1661548666154-856d3a471114?auto=format&fit=crop&w=600&q=80", alt: "Handcrafted pottery" },
 ];
 
-const artists = [
-  {
-    name: "山田 宗一郎",
-    region: "備前焼",
-    style: "伝統技法を守りながら現代の食卓に寄り添う器を制作",
-    career: "陶歴35年",
-  },
-  {
-    name: "佐藤 美咲",
-    region: "有田焼",
-    style: "繊細な染付と現代的なフォルムを融合した作品が人気",
-    career: "陶歴12年",
-  },
-  {
-    name: "田中 悠介",
-    region: "信楽焼",
-    style: "薪窯にこだわり、自然釉の偶然の美を追求する若手作家",
-    career: "陶歴8年",
-  },
-];
+// カテゴリ代表画像（全15カテゴリ）
+const categoryImages: Record<string, string> = {
+  陶磁器: "https://images.unsplash.com/photo-1664477407933-dd42ed0c6c62?auto=format&fit=crop&w=400&q=80",
+  織物: "https://images.unsplash.com/photo-1680817318163-4f72c021b820?auto=format&fit=crop&w=400&q=80",
+  漆器: "https://images.unsplash.com/photo-1682159316104-70c98a792e94?auto=format&fit=crop&w=400&q=80",
+  染色品: "https://images.unsplash.com/photo-1670672013421-ec17c92a66d8?auto=format&fit=crop&w=400&q=80",
+  "木工品・竹工品": "https://images.unsplash.com/photo-1572766736431-e4640ff4da3f?auto=format&fit=crop&w=400&q=80",
+  金工品: "https://images.unsplash.com/photo-1661548666154-856d3a471114?auto=format&fit=crop&w=400&q=80",
+  その他繊維製品: "https://images.unsplash.com/photo-1661198979635-1563c2d19196?auto=format&fit=crop&w=400&q=80",
+  "仏壇・仏具": "https://images.unsplash.com/photo-1764250538851-d6ab5c7affab?auto=format&fit=crop&w=400&q=80",
+  和紙: "https://images.unsplash.com/photo-1750881686363-e950ce791487?auto=format&fit=crop&w=400&q=80",
+  文具: "https://images.unsplash.com/photo-1720702214757-c57fb7ba2b93?auto=format&fit=crop&w=400&q=80",
+  石工品: "https://images.unsplash.com/photo-1760035791576-3c80923faeba?auto=format&fit=crop&w=400&q=80",
+  貴石細工: "https://images.unsplash.com/photo-1758995116142-c626a962a682?auto=format&fit=crop&w=400&q=80",
+  "人形・こけし": "https://images.unsplash.com/photo-1720730184764-d5f267e6b80c?auto=format&fit=crop&w=400&q=80",
+  その他の工芸品: "https://images.unsplash.com/photo-1617242399514-28629f46209a?auto=format&fit=crop&w=400&q=80",
+  "工芸材料・工芸用具": "https://images.unsplash.com/photo-1700055611282-f2ce81099038?auto=format&fit=crop&w=400&q=80",
+};
 
-export default function Home() {
+export default async function Home() {
+  const { data: crafts } = await supabase
+    .from("crafts")
+    .select("id, name, name_kana, prefecture, city, category, description, designated_year, image_url")
+    .order("name");
+
+  const allCrafts = (crafts ?? []) as Craft[];
+
+  // カテゴリ別にグループ化
+  const byCategory: Record<string, Craft[]> = {};
+  for (const craft of allCrafts) {
+    if (!byCategory[craft.category]) byCategory[craft.category] = [];
+    byCategory[craft.category].push(craft);
+  }
+
+  // 都道府県別にグループ化
+  const byPrefecture: Record<string, Craft[]> = {};
+  for (const craft of allCrafts) {
+    if (!byPrefecture[craft.prefecture]) byPrefecture[craft.prefecture] = [];
+    byPrefecture[craft.prefecture].push(craft);
+  }
+
+  // 都道府県別の品目数（JapanRegionMap用）
+  const prefectureCounts: Record<string, number> = {};
+  for (const [pref, crafts] of Object.entries(byPrefecture)) {
+    prefectureCounts[pref] = crafts.length;
+  }
+
+  // Popular: 指定年が古い順に12件
+  const popularCrafts = allCrafts
+    .filter((c) => c.designated_year)
+    .sort((a, b) => (a.designated_year ?? 9999) - (b.designated_year ?? 9999))
+    .slice(0, 12);
+
+  // 検索用の軽量データ
+  const searchItems = allCrafts.map((c) => ({
+    id: c.id,
+    name: c.name,
+    name_kana: c.name_kana,
+    prefecture: c.prefecture,
+    category: c.category,
+  }));
+
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <header className="border-b border-stone-light/40 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
-          <h1 className="text-xl font-bold tracking-wide text-indigo">
-            やきものポータル
-          </h1>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-warm-gray">
-            <a href="#regions" className="hover:text-indigo transition-colors">
-              産地から探す
-            </a>
-            <a href="#artists" className="hover:text-indigo transition-colors">
-              作家紹介
-            </a>
-            <a href="#about" className="hover:text-indigo transition-colors">
-              このサイトについて
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-cream">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <p className="text-sm font-medium tracking-widest text-stone uppercase mb-4">
-            日本の伝統工芸
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-foreground mb-6">
-            土と炎が紡ぐ、
-            <br />
-            日本のやきもの。
-          </h2>
-          <p className="max-w-lg text-lg leading-relaxed text-warm-gray mb-10">
-            全国各地の陶芸作家・窯元を紹介するポータルサイトです。
-            産地の歴史、作家の想い、器の魅力をお届けします。
-          </p>
-          <div className="flex gap-4">
-            <a
-              href="#regions"
-              className="inline-block rounded-md bg-indigo px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-indigo-light"
-            >
-              産地から探す
-            </a>
-            <a
-              href="#artists"
-              className="inline-block rounded-md border border-stone-light px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white"
-            >
-              作家を見る
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Regions */}
-      <section id="regions" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="mb-12">
-          <p className="text-sm font-medium tracking-widest text-stone uppercase mb-2">
-            Regions
-          </p>
-          <h2 className="text-3xl font-bold text-foreground">産地から探す</h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {regions.map((region) => (
-            <article
-              key={region.name}
-              className="group rounded-lg border border-stone-light/30 bg-white p-6 transition-shadow hover:shadow-md"
-            >
-              <h3 className="text-lg font-bold text-indigo mb-1 group-hover:text-indigo-light transition-colors">
-                {region.name}
-              </h3>
-              <p className="text-xs text-stone mb-3">{region.area}</p>
-              <p className="text-sm leading-relaxed text-warm-gray">
-                {region.description}
-              </p>
-            </article>
+    <>
+      {/* Hero with Image Grid */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[#1a1612]">
+        {/* 背景画像グリッド */}
+        <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-6 grid-rows-1 opacity-40">
+          {heroImages.map((img, i) => (
+            <div key={i} className="relative overflow-hidden">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 33vw, 17vw"
+                priority={i < 3}
+              />
+            </div>
           ))}
         </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1612]/60 via-[#1a1612]/80 to-[#1a1612]" />
+
+        <div className="relative z-10 w-full max-w-3xl mx-auto px-6 text-center py-20">
+          <p className="text-xs tracking-[0.4em] text-stone-light/50 uppercase mb-6">
+            Traditional Japanese Crafts
+          </p>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white/95 mb-6 tracking-tight">
+            手から手へ、
+            <br />
+            <span className="text-stone-light/70">紡がれる技。</span>
+          </h1>
+          <p className="max-w-xl mx-auto text-sm md:text-base leading-relaxed text-stone-light/40 mb-10">
+            千年の時を超えて受け継がれる日本の伝統工芸。
+            <br className="hidden md:block" />
+            全国{allCrafts.length}品目の職人の手仕事と、その物語。
+          </p>
+
+          {/* 検索バー */}
+          <div className="max-w-lg mx-auto mb-10">
+            <SearchBar crafts={searchItems} variant="hero" />
+          </div>
+
+          <div className="flex justify-center gap-8">
+            <a href="#category" className="text-xs tracking-widest text-white/60 hover:text-white/90 transition-colors uppercase">
+              Category
+            </a>
+            <a href="#area" className="text-xs tracking-widest text-white/60 hover:text-white/90 transition-colors uppercase">
+              Area
+            </a>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Artists */}
-      <section id="artists" className="bg-cream">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+      {/* ── CATEGORY ── */}
+      <section id="category" className="py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12">
-            <p className="text-sm font-medium tracking-widest text-stone uppercase mb-2">
-              Artists
-            </p>
-            <h2 className="text-3xl font-bold text-foreground">注目の作家</h2>
+            <p className="text-xs tracking-[0.3em] text-stone uppercase mb-3">Category</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">工芸品目</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {artists.map((artist) => (
-              <article
-                key={artist.name}
-                className="rounded-lg bg-white p-6 shadow-sm"
-              >
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-stone-light/30 text-2xl font-bold text-indigo">
-                  {artist.name.charAt(0)}
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-1">
-                  {artist.name}
-                </h3>
-                <p className="text-xs font-medium text-indigo mb-1">
-                  {artist.region}
-                </p>
-                <p className="text-xs text-stone mb-3">{artist.career}</p>
-                <p className="text-sm leading-relaxed text-warm-gray">
-                  {artist.style}
-                </p>
-              </article>
-            ))}
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {categoryOrder.map((cat) => {
+              const meta = categoryMeta[cat] ?? defaultMeta;
+              const count = byCategory[cat]?.length ?? 0;
+              const bgImage = categoryImages[cat];
+              return (
+                <Link
+                  key={cat}
+                  href={`/category/${encodeURIComponent(cat)}`}
+                  className="group relative overflow-hidden rounded-lg aspect-[4/3] flex flex-col justify-end p-4 transition-transform hover:scale-[1.02]"
+                >
+                  {bgImage ? (
+                    <>
+                      <Image
+                        src={bgImage}
+                        alt={cat}
+                        fill
+                        className="object-cover transition-transform group-hover:scale-105"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                      />
+                      <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
+                    </>
+                  ) : (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${meta.gradient} transition-opacity group-hover:opacity-90`} />
+                  )}
+                  <span className="absolute top-3 right-3 text-[40px] font-bold text-white/[0.08] leading-none select-none">
+                    {meta.icon}
+                  </span>
+                  <div className="relative z-10">
+                    <p className="text-[10px] tracking-wider text-white/50 uppercase mb-1">{meta.en}</p>
+                    <p className="text-sm font-bold text-white/90">{cat}</p>
+                    <p className="text-xs text-white/40 mt-0.5">{count}品目</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer id="about" className="border-t border-stone-light/40 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-12">
-          <div className="md:flex md:items-start md:justify-between">
-            <div className="mb-8 md:mb-0">
-              <h2 className="text-lg font-bold text-indigo mb-2">
-                やきものポータル
-              </h2>
-              <p className="max-w-sm text-sm leading-relaxed text-warm-gray">
-                日本全国の陶芸作家・窯元の魅力を発信するポータルサイトです。
-                伝統と革新が息づくやきものの世界をお楽しみください。
-              </p>
-            </div>
-            <nav className="flex gap-8 text-sm text-warm-gray">
-              <div className="flex flex-col gap-2">
-                <span className="font-medium text-foreground">コンテンツ</span>
-                <a href="#regions" className="hover:text-indigo transition-colors">
-                  産地から探す
-                </a>
-                <a href="#artists" className="hover:text-indigo transition-colors">
-                  作家紹介
-                </a>
-              </div>
-              <div className="flex flex-col gap-2">
-                <span className="font-medium text-foreground">サイト情報</span>
-                <span>お問い合わせ</span>
-                <span>利用規約</span>
-              </div>
-            </nav>
+      {/* ── AREA ── */}
+      <section id="area" className="bg-cream py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12">
+            <p className="text-xs tracking-[0.3em] text-stone uppercase mb-3">Area</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">産地から探す</h2>
+            <p className="text-sm text-warm-gray mt-2">
+              全国8地方の伝統工芸品を地図から探索できます
+            </p>
           </div>
-          <div className="mt-10 border-t border-stone-light/30 pt-6 text-center text-xs text-stone">
-            &copy; 2026 やきものポータル
+
+          <JapanRegionMap
+            regions={areaRegions}
+            prefectureCounts={prefectureCounts}
+            totalCrafts={allCrafts.length}
+          />
+        </div>
+      </section>
+
+      {/* ── POPULAR ── */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12">
+            <p className="text-xs tracking-[0.3em] text-stone uppercase mb-3">Popular</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">注目の工芸品</h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {popularCrafts.map((craft) => {
+              const meta = categoryMeta[craft.category] ?? defaultMeta;
+              return (
+                <Link
+                  key={craft.id}
+                  href={`/crafts/${craft.id}`}
+                  className="group rounded-lg border border-stone-light/20 bg-white overflow-hidden hover:shadow-md transition-all hover:border-stone-light/40"
+                >
+                  {craft.image_url && (
+                    <div className="relative aspect-[4/3] bg-cream">
+                      <Image
+                        src={craft.image_url}
+                        alt={craft.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
+                      />
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`${meta.accent} inline-flex h-5 w-5 items-center justify-center rounded text-[10px] font-bold text-white`}>
+                        {meta.icon}
+                      </span>
+                      <p className="text-[11px] text-stone">{craft.category}</p>
+                    </div>
+                    <h3 className="text-sm font-bold text-foreground group-hover:text-indigo transition-colors truncate">
+                      {craft.name}
+                    </h3>
+                    <p className="text-[11px] text-stone mt-0.5">
+                      {craft.prefecture}
+                    </p>
+                    <p className="text-[11px] leading-relaxed text-warm-gray mt-1.5 line-clamp-2">
+                      {craft.description}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
-      </footer>
-    </div>
+      </section>
+
+      {/* 物語セクション */}
+      <section className="bg-[#1a1612] py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <p className="text-xs tracking-[0.3em] text-stone-light/40 uppercase mb-6">Stories</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white/90 leading-tight mb-6">
+            工芸に宿る、物語。
+          </h2>
+          <p className="text-sm md:text-base leading-relaxed text-stone-light/50 max-w-2xl mx-auto">
+            一つの工芸品の裏には、何世代にもわたる職人たちの
+            挑戦と継承の物語がある。廃刀令を乗り越えた組紐、
+            千年の炎を守り続ける焼き物——。
+            その物語を、ここに記録する。
+          </p>
+        </div>
+      </section>
+    </>
   );
 }

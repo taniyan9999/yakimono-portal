@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#4a7fa5"/>
+      <stop offset="100%" stop-color="#264e70"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Soba choko (small cup, slightly tapered) silhouette -->
+  <path d="M145,130 L255,130 C255,130 265,135 268,145 L280,290 C280,300 265,310 240,312 L160,312 C135,310 120,300 120,290 L132,145 C135,135 145,130 145,130 Z" fill="rgba(255,252,245,0.88)"/>
+  <ellipse cx="200" cy="132" rx="57" ry="15" fill="rgba(255,252,245,0.7)"/>
+  <ellipse cx="200" cy="312" rx="42" ry="8" fill="rgba(255,252,245,0.88)"/>
+  <text x="200" y="365" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">染付そば猪口</text>
+  <text x="200" y="388" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">Arita-yaki</text>
+</svg>

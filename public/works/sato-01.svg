@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#4a7fa5"/>
+      <stop offset="100%" stop-color="#264e70"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Cup with handle silhouette -->
+  <path d="M130,150 C130,140 145,130 165,128 L235,128 C255,130 270,140 270,150 L275,280 C275,295 260,305 240,308 L160,308 C140,305 125,295 125,280 Z" fill="rgba(255,252,245,0.88)"/>
+  <ellipse cx="200" cy="148" rx="72" ry="18" fill="rgba(255,252,245,0.7)"/>
+  <!-- Handle -->
+  <path d="M270,170 C300,175 315,195 315,220 C315,245 300,265 270,270" fill="none" stroke="rgba(255,252,245,0.88)" stroke-width="14" stroke-linecap="round"/>
+  <ellipse cx="200" cy="308" rx="42" ry="6" fill="rgba(255,252,245,0.88)"/>
+  <text x="200" y="360" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">染付花文カップ</text>
+  <text x="200" y="385" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">Arita-yaki</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#8B7355"/>
+      <stop offset="100%" stop-color="#6B5B4A"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Sake cup (guinomi, small and stout) silhouette -->
+  <path d="M148,170 C148,158 160,148 175,143 C188,139 195,138 200,137 C205,138 212,139 225,143 C240,148 252,158 252,170 L255,265 C255,280 242,290 225,294 L175,294 C158,290 145,280 145,265 Z" fill="rgba(255,248,235,0.85)"/>
+  <ellipse cx="200" cy="168" rx="53" ry="18" fill="rgba(255,248,235,0.65)"/>
+  <ellipse cx="200" cy="294" rx="42" ry="7" fill="rgba(255,248,235,0.85)"/>
+  <text x="200" y="355" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">火色ぐい呑</text>
+  <text x="200" y="380" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">Shigaraki-yaki</text>
+</svg>

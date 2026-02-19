@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#A0522D"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Vase silhouette -->
+  <path d="M170,300 C170,300 150,280 148,250 C146,220 160,200 158,170 C156,140 140,130 145,100 C148,80 165,65 180,60 C190,57 200,56 200,56 C200,56 210,57 220,60 C235,65 252,80 255,100 C260,130 244,140 242,170 C240,200 254,220 252,250 C250,280 230,300 230,300 Z" fill="rgba(255,248,230,0.85)"/>
+  <ellipse cx="200" cy="56" rx="32" ry="8" fill="rgba(255,248,230,0.85)"/>
+  <ellipse cx="200" cy="300" rx="32" ry="6" fill="rgba(255,248,230,0.85)"/>
+  <text x="200" y="360" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">窯変花入</text>
+  <text x="200" y="385" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">Bizen-yaki</text>
+</svg>

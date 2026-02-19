@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#A0522D"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Plate silhouette -->
+  <ellipse cx="200" cy="210" rx="140" ry="50" fill="rgba(255,248,230,0.85)"/>
+  <ellipse cx="200" cy="210" rx="120" ry="40" fill="rgba(255,248,230,0.6)"/>
+  <ellipse cx="200" cy="225" rx="60" ry="12" fill="rgba(255,248,230,0.45)"/>
+  <path d="M60,210 C60,230 80,250 110,260 C140,270 170,272 200,272 C230,272 260,270 290,260 C320,250 340,230 340,210" fill="none" stroke="rgba(255,248,230,0.5)" stroke-width="1.5"/>
+  <text x="200" y="340" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">桟切皿</text>
+  <text x="200" y="365" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">Bizen-yaki</text>
+</svg>

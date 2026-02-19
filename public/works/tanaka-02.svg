@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#8B7355"/>
+      <stop offset="100%" stop-color="#6B5B4A"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Tea bowl (chawan, wider and more rustic) silhouette -->
+  <path d="M85,185 C85,165 110,148 140,138 C165,130 185,127 200,126 C215,127 235,130 260,138 C290,148 315,165 315,185 L310,270 C308,290 285,305 255,310 L145,310 C115,305 92,290 90,270 Z" fill="rgba(255,248,235,0.85)"/>
+  <ellipse cx="200" cy="183" rx="115" ry="32" fill="rgba(255,248,235,0.65)"/>
+  <ellipse cx="200" cy="310" rx="55" ry="8" fill="rgba(255,248,235,0.85)"/>
+  <text x="200" y="365" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">焦げ茶碗</text>
+  <text x="200" y="388" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">Shigaraki-yaki</text>
+</svg>

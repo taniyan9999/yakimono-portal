@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#A0522D"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Bowl silhouette -->
+  <path d="M100,200 C100,200 110,170 130,155 C155,137 175,132 200,130 C225,132 245,137 270,155 C290,170 300,200 300,200 C300,200 295,255 270,275 C245,295 225,300 200,300 C175,300 155,295 130,275 C105,255 100,200 100,200 Z" fill="rgba(255,248,230,0.85)"/>
+  <ellipse cx="200" cy="195" rx="100" ry="25" fill="rgba(255,248,230,0.7)"/>
+  <ellipse cx="200" cy="300" rx="40" ry="6" fill="rgba(255,248,230,0.85)"/>
+  <text x="200" y="360" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">緋襷茶碗</text>
+  <text x="200" y="385" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">Bizen-yaki</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#8B7355"/>
+      <stop offset="100%" stop-color="#6B5B4A"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Pot/jar (tsubo, round body with narrow neck) silhouette -->
+  <path d="M180,310 C145,305 120,285 112,250 C105,215 108,185 115,160 C122,140 135,125 150,115 C158,110 163,105 168,95 C172,87 178,80 185,76 C192,73 198,72 200,72 C202,72 208,73 215,76 C222,80 228,87 232,95 C237,105 242,110 250,115 C265,125 278,140 285,160 C292,185 295,215 288,250 C280,285 255,305 220,310 Z" fill="rgba(255,248,235,0.85)"/>
+  <ellipse cx="200" cy="72" rx="20" ry="7" fill="rgba(255,248,235,0.85)"/>
+  <ellipse cx="200" cy="310" rx="22" ry="5" fill="rgba(255,248,235,0.85)"/>
+  <text x="200" y="362" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">灰被り壺</text>
+  <text x="200" y="385" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">Shigaraki-yaki</text>
+</svg>
