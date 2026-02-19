@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { artists } from "@/data/artists";
 import { shops } from "@/data/shops";
+import { supabase } from "@/lib/supabase";
 import ArtisanAvatar from "@/components/ArtisanAvatar";
+import ArtisanDirectory from "@/components/ArtisanDirectory";
+import type { ArtisanWithCraft } from "@/components/ArtisanDirectory";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +13,45 @@ export const metadata: Metadata = {
     "伝統を受け継ぎ、今を生きる職人と工房。KOGEI PORTALが紹介する、工芸のつくり手たち。",
 };
 
-export default function CraftsPeoplePage() {
+export default async function CraftsPeoplePage() {
+  // Supabase から全職人データを取得（crafts テーブルとリレーション結合）
+  const allArtisans: ArtisanWithCraft[] = [];
+  let from = 0;
+  const pageSize = 1000;
+  while (true) {
+    const { data, error } = await supabase
+      .from("artisans")
+      .select(
+        "id, name, generation, philosophy, quote, workshop_name, crafts(id, name, category, prefecture)"
+      )
+      .order("name")
+      .range(from, from + pageSize - 1);
+
+    if (error || !data) break;
+
+    for (const row of data) {
+      const craft = row.crafts as unknown as {
+        id: string;
+        name: string;
+        category: string;
+        prefecture: string;
+      } | null;
+      if (!craft) continue;
+      allArtisans.push({
+        id: row.id,
+        name: row.name,
+        generation: row.generation,
+        philosophy: row.philosophy,
+        quote: row.quote,
+        workshop_name: row.workshop_name,
+        craft,
+      });
+    }
+
+    if (data.length < pageSize) break;
+    from += pageSize;
+  }
+
   return (
     <>
       {/* ヒーロー */}
@@ -30,101 +71,112 @@ export default function CraftsPeoplePage() {
         </div>
       </section>
 
-      {/* 一覧 */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          {/* 職人 */}
-          {artists.length > 0 && (
-            <div className="mb-16">
-              <h2 className="text-lg font-bold text-foreground mb-6 pb-3 border-b border-stone-light/30">
-                職人・作家
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {artists.map((artist) => (
-                  <Link
-                    key={artist.slug}
-                    href={`/artists/${artist.slug}`}
-                    className="group rounded-lg border border-stone-light/20 bg-white p-6 hover:shadow-md transition-all hover:border-stone-light/40"
-                  >
-                    <div className="flex items-start gap-4 mb-4">
-                      <ArtisanAvatar name={artist.name} size={48} />
-                      <div className="min-w-0">
-                        <h3 className="text-base font-bold text-foreground group-hover:text-indigo transition-colors truncate">
-                          {artist.name}
-                        </h3>
-                        {artist.nameEnglish && (
-                          <p className="text-[11px] text-stone-light truncate">
-                            {artist.nameEnglish}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      <span className="rounded-full bg-indigo/10 px-3 py-0.5 text-[11px] font-medium text-indigo">
-                        {artist.regionName}
-                      </span>
-                      {artist.prefecture && artist.city && (
-                        <span className="text-[11px] text-stone">
-                          {artist.prefecture}{artist.city}
-                        </span>
+      {/* 注目の職人 */}
+      {artists.length > 0 && (
+        <section className="py-16 md:py-24">
+          <div className="mx-auto max-w-5xl px-6">
+            <h2 className="text-lg font-bold text-foreground mb-6 pb-3 border-b border-stone-light/30">
+              注目の職人・作家
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {artists.map((artist) => (
+                <Link
+                  key={artist.slug}
+                  href={`/artists/${artist.slug}`}
+                  className="group rounded-lg border border-stone-light/20 bg-white p-6 hover:shadow-md transition-all hover:border-stone-light/40"
+                >
+                  <div className="flex items-start gap-4 mb-4">
+                    <ArtisanAvatar name={artist.name} size={48} />
+                    <div className="min-w-0">
+                      <h3 className="text-base font-bold text-foreground group-hover:text-indigo transition-colors truncate">
+                        {artist.name}
+                      </h3>
+                      {artist.nameEnglish && (
+                        <p className="text-[11px] text-stone-light truncate">
+                          {artist.nameEnglish}
+                        </p>
                       )}
                     </div>
-                    <p className="text-[12px] leading-relaxed text-warm-gray line-clamp-2">
-                      {artist.style}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* 工房・店舗 */}
-          {shops.length > 0 && (
-            <div>
-              <h2 className="text-lg font-bold text-foreground mb-6 pb-3 border-b border-stone-light/30">
-                工房・店舗
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {shops.map((shop) => (
-                  <Link
-                    key={shop.slug}
-                    href={`/shops/${shop.slug}`}
-                    className="group rounded-lg border border-stone-light/20 bg-white p-6 hover:shadow-md transition-all hover:border-stone-light/40"
-                  >
-                    <div className="mb-4">
-                      <h3 className="text-base font-bold text-foreground group-hover:text-indigo transition-colors">
-                        {shop.name}
-                      </h3>
-                      <p className="text-[11px] text-stone-light">
-                        {shop.nameEnglish}
-                      </p>
-                    </div>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      <span className="rounded-full bg-amber-900/15 px-3 py-0.5 text-[11px] font-medium text-amber-800">
-                        {shop.craftName}
-                      </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="rounded-full bg-indigo/10 px-3 py-0.5 text-[11px] font-medium text-indigo">
+                      {artist.regionName}
+                    </span>
+                    {artist.prefecture && artist.city && (
                       <span className="text-[11px] text-stone">
-                        {shop.prefecture}{shop.city}
+                        {artist.prefecture}{artist.city}
                       </span>
-                    </div>
-                    <p className="text-[12px] leading-relaxed text-warm-gray line-clamp-2">
-                      {shop.description.split("\n\n")[0]}
-                    </p>
-                    <div className="mt-3 flex items-center gap-2">
-                      <span className="rounded-full bg-stone-light/20 px-2 py-0.5 text-[10px] font-medium text-stone">
-                        {shop.locations.length}拠点
-                      </span>
-                      <span className="rounded-full bg-stone-light/20 px-2 py-0.5 text-[10px] font-medium text-stone">
-                        {shop.representative.generation}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+                    )}
+                  </div>
+                  <p className="text-[12px] leading-relaxed text-warm-gray line-clamp-2">
+                    {artist.style}
+                  </p>
+                </Link>
+              ))}
             </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
+
+      {/* 全職人一覧（Supabase） */}
+      {allArtisans.length > 0 && (
+        <section className="bg-cream py-16 md:py-24">
+          <div className="mx-auto max-w-5xl px-6">
+            <h2 className="text-lg font-bold text-foreground mb-6 pb-3 border-b border-stone-light/30">
+              職人一覧
+            </h2>
+            <ArtisanDirectory artisans={allArtisans} />
+          </div>
+        </section>
+      )}
+
+      {/* 工房・店舗 */}
+      {shops.length > 0 && (
+        <section className="py-16 md:py-24">
+          <div className="mx-auto max-w-5xl px-6">
+            <h2 className="text-lg font-bold text-foreground mb-6 pb-3 border-b border-stone-light/30">
+              工房・店舗
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {shops.map((shop) => (
+                <Link
+                  key={shop.slug}
+                  href={`/shops/${shop.slug}`}
+                  className="group rounded-lg border border-stone-light/20 bg-white p-6 hover:shadow-md transition-all hover:border-stone-light/40"
+                >
+                  <div className="mb-4">
+                    <h3 className="text-base font-bold text-foreground group-hover:text-indigo transition-colors">
+                      {shop.name}
+                    </h3>
+                    <p className="text-[11px] text-stone-light">
+                      {shop.nameEnglish}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="rounded-full bg-amber-900/15 px-3 py-0.5 text-[11px] font-medium text-amber-800">
+                      {shop.craftName}
+                    </span>
+                    <span className="text-[11px] text-stone">
+                      {shop.prefecture}{shop.city}
+                    </span>
+                  </div>
+                  <p className="text-[12px] leading-relaxed text-warm-gray line-clamp-2">
+                    {shop.description.split("\n\n")[0]}
+                  </p>
+                  <div className="mt-3 flex items-center gap-2">
+                    <span className="rounded-full bg-stone-light/20 px-2 py-0.5 text-[10px] font-medium text-stone">
+                      {shop.locations.length}拠点
+                    </span>
+                    <span className="rounded-full bg-stone-light/20 px-2 py-0.5 text-[10px] font-medium text-stone">
+                      {shop.representative.generation}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }
