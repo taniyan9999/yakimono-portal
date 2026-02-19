@@ -9,6 +9,9 @@ export default function Header() {
   const navLinks = [
     { href: "/#category", label: "CATEGORY / 工芸品目" },
     { href: "/#area", label: "AREA / 産地" },
+    { href: "/stories", label: "STORIES / 物語" },
+    { href: "/seasonal", label: "SEASONAL / 季節" },
+    { href: "/events", label: "EVENTS / 行事" },
   ];
 
   return (
@@ -34,6 +37,14 @@ export default function Header() {
             </Link>
           ))}
           <Link
+            href="/favorites"
+            className="flex items-center gap-1.5 hover:text-indigo transition-colors"
+          >
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+            </svg>
+          </Link>
+          <Link
             href="/search"
             className="flex items-center gap-1.5 hover:text-indigo transition-colors"
           >
@@ -46,6 +57,11 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <div className="flex items-center gap-4 md:hidden">
+          <Link href="/favorites" className="text-warm-gray hover:text-indigo transition-colors">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+            </svg>
+          </Link>
           <Link href="/search" className="text-warm-gray hover:text-indigo transition-colors">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

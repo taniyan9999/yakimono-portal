@@ -4,6 +4,8 @@ import { supabase } from "@/lib/supabase";
 import { type Craft, categoryMeta, categoryOrder, defaultMeta, areaRegions } from "@/lib/crafts";
 import SearchBar from "@/components/SearchBar";
 import JapanRegionMap from "@/components/JapanRegionMap";
+import { stories, storyCategoryLabels } from "@/data/stories";
+import { getCurrentSeasonFeature, seasonMeta } from "@/data/seasonal";
 
 // ヒーロー背景画像（Unsplash - 伝統工芸）
 const heroImages = [
@@ -249,19 +251,128 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 物語セクション */}
+      {/* ── SEASONAL ── */}
+      {(() => {
+        const feature = getCurrentSeasonFeature();
+        const meta = seasonMeta[feature.season];
+        return (
+          <section className="bg-cream py-20 md:py-28">
+            <div className="mx-auto max-w-7xl px-6">
+              <div className="md:grid md:grid-cols-[1fr_340px] md:gap-12 items-center">
+                <div>
+                  <p className="text-xs tracking-[0.3em] text-stone uppercase mb-3">
+                    Seasonal Feature
+                  </p>
+                  <span
+                    className={`inline-block rounded-full px-3 py-1 text-[11px] font-medium mb-4 ${meta.color}`}
+                  >
+                    {meta.icon} {meta.label}の特集
+                  </span>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight mb-4">
+                    {feature.title}
+                  </h2>
+                  <p className="text-sm leading-relaxed text-warm-gray mb-6 max-w-xl">
+                    {feature.description}
+                  </p>
+                  <div className="flex flex-wrap gap-3 mb-6">
+                    {feature.craftHighlights.map((h) => (
+                      <div key={h.name} className="rounded bg-white px-3 py-2 shadow-sm">
+                        <p className="text-xs font-bold text-foreground">{h.name}</p>
+                        <p className="text-[11px] text-warm-gray">{h.reason}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href={`/seasonal/${feature.slug}`}
+                    className="inline-flex items-center gap-2 text-sm text-indigo hover:text-foreground transition-colors font-medium"
+                  >
+                    この特集を読む &rarr;
+                  </Link>
+                </div>
+                <div className="hidden md:block relative aspect-[3/4] rounded-lg overflow-hidden">
+                  <Image
+                    src={feature.coverImage}
+                    alt={feature.title}
+                    fill
+                    className="object-cover"
+                    sizes="340px"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* ── STORIES ── */}
       <section className="bg-[#1a1612] py-20 md:py-28">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <p className="text-xs tracking-[0.3em] text-stone-light/40 uppercase mb-6">Stories</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white/90 leading-tight mb-6">
-            工芸に宿る、物語。
-          </h2>
-          <p className="text-sm md:text-base leading-relaxed text-stone-light/50 max-w-2xl mx-auto">
-            一つの工芸品の裏には、何世代にもわたる職人たちの
-            挑戦と継承の物語がある。廃刀令を乗り越えた組紐、
-            千年の炎を守り続ける焼き物——。
-            その物語を、ここに記録する。
-          </p>
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center mb-14">
+            <p className="text-xs tracking-[0.3em] text-stone-light/40 uppercase mb-3">
+              Stories
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white/90 leading-tight mb-4">
+              工芸に宿る、物語。
+            </h2>
+            <p className="text-sm leading-relaxed text-stone-light/50 max-w-xl mx-auto">
+              歴史の転換点、職人の声、暮らしの中の工芸——その物語を記録する。
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {stories.slice(0, 3).map((story) => {
+              const cat = storyCategoryLabels[story.category];
+              return (
+                <Link
+                  key={story.id}
+                  href={`/stories/${story.slug}`}
+                  className="group rounded-lg overflow-hidden bg-white/5 hover:bg-white/10 transition-colors"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={story.coverImage}
+                      alt={story.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <span
+                      className={`absolute top-3 left-3 rounded-full px-3 py-1 text-[11px] font-medium ${cat.color}`}
+                    >
+                      {cat.label}
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-sm font-bold text-white/90 leading-snug group-hover:text-white transition-colors line-clamp-2 mb-2">
+                      {story.title}
+                    </h3>
+                    <p className="text-[12px] leading-relaxed text-stone-light/50 line-clamp-2 mb-3">
+                      {story.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between text-[11px] text-stone-light/30">
+                      <span>
+                        {new Date(story.publishedAt).toLocaleDateString("ja-JP", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </span>
+                      <span>{story.readingTime}分</span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/stories"
+              className="inline-flex items-center gap-2 border-b border-stone-light/30 pb-1 text-sm text-stone-light/50 hover:text-white/80 transition-colors"
+            >
+              もっと読む &rarr;
+            </Link>
+          </div>
         </div>
       </section>
     </>

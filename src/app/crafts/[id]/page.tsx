@@ -4,8 +4,13 @@ import { notFound } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import ManufacturingSteps from "@/components/ManufacturingSteps";
 import ArtisanAvatar from "@/components/ArtisanAvatar";
+import FavoriteButton from "@/components/FavoriteButton";
+import ShareButtons from "@/components/ShareButtons";
+import ECLinks from "@/components/ECLinks";
+import ImageGallery from "@/components/ImageGallery";
 import stepsData from "@/data/manufacturing-steps.json";
 import artisansData from "@/data/artisans-all.json";
+import { getGalleryImages } from "@/data/gallery";
 
 type Craft = {
   id: string;
@@ -78,6 +83,24 @@ export default async function CraftDetailPage({
       craft.name
     ] ?? [];
 
+  // ギャラリー画像を取得
+  const galleryImages = getGalleryImages(craft.name);
+
+  // 同じカテゴリの関連工芸品を取得
+  const { data: relatedData } = await supabase
+    .from("crafts")
+    .select("id, name, prefecture, category, image_url")
+    .eq("category", craft.category)
+    .neq("id", id)
+    .limit(4);
+  const relatedCrafts = (relatedData ?? []) as {
+    id: string;
+    name: string;
+    prefecture: string;
+    category: string;
+    image_url: string | null;
+  }[];
+
   return (
     <>
       {/* ヒーロー */}
@@ -94,13 +117,16 @@ export default async function CraftDetailPage({
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-[#2c2420]/80 via-[#1a1612]/60 to-[#0d0b09]" />
 
-        {/* 戻るリンク */}
-        <Link
-          href="/"
-          className="absolute top-8 left-8 z-20 text-sm text-white/50 hover:text-white/80 transition-colors"
-        >
-          &larr; 一覧に戻る
-        </Link>
+        {/* 戻るリンク & お気に入り */}
+        <div className="absolute top-8 left-8 right-8 z-20 flex items-center justify-between">
+          <Link
+            href="/"
+            className="text-sm text-white/50 hover:text-white/80 transition-colors"
+          >
+            &larr; 一覧に戻る
+          </Link>
+          <FavoriteButton craftId={id} />
+        </div>
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 pb-16 md:pb-20">
           <p className="text-xs tracking-[0.3em] text-stone-light/40 uppercase mb-4">
@@ -187,6 +213,11 @@ export default async function CraftDetailPage({
           </div>
         </div>
       </section>
+
+      {/* ギャラリー */}
+      {galleryImages.length > 0 && (
+        <ImageGallery images={galleryImages} craftName={craft.name} />
+      )}
 
       {/* 制作工程 */}
       {manufacturingSteps.length > 0 && (
@@ -295,8 +326,60 @@ export default async function CraftDetailPage({
         </section>
       )}
 
+      {/* EC連携 & SNSシェア */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="md:grid md:grid-cols-[1fr_auto] md:gap-8 md:items-start">
+            <ECLinks craftName={craft.name} />
+            <div className="mt-6 md:mt-0">
+              <ShareButtons title={`${craft.name} | KOGEI PORTAL`} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 関連工芸品 */}
+      {relatedCrafts.length > 0 && (
+        <section className="bg-cream py-16 md:py-20">
+          <div className="mx-auto max-w-5xl px-6">
+            <h2 className="text-xl font-bold text-foreground mb-8">
+              同じカテゴリの工芸品
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {relatedCrafts.map((r) => (
+                <Link
+                  key={r.id}
+                  href={`/crafts/${r.id}`}
+                  className="group rounded-lg border border-stone-light/20 bg-white overflow-hidden hover:shadow-md transition-all"
+                >
+                  {r.image_url && (
+                    <div className="relative aspect-[4/3] bg-cream">
+                      <Image
+                        src={r.image_url}
+                        alt={r.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                    </div>
+                  )}
+                  <div className="p-3">
+                    <h3 className="text-sm font-bold text-foreground group-hover:text-indigo transition-colors truncate">
+                      {r.name}
+                    </h3>
+                    <p className="text-[11px] text-stone mt-0.5">
+                      {r.prefecture}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* 一覧に戻る */}
-      <section className="pb-20">
+      <section className="py-12">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <Link
             href="/"
