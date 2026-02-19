@@ -21,9 +21,33 @@
   --color-cream: var(--color-cream);
   --color-warm-gray: var(--color-warm-gray);
   --font-sans: var(--font-noto-sans-jp), sans-serif;
+  --font-serif: var(--font-noto-serif-jp), serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Scroll fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

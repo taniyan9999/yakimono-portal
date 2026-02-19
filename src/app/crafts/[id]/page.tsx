@@ -11,6 +11,9 @@ import ImageGallery from "@/components/ImageGallery";
 import stepsData from "@/data/manufacturing-steps.json";
 import artisansData from "@/data/artisans-all.json";
 import { getGalleryImages } from "@/data/gallery";
+import { getCraftPhilosophy } from "@/data/craft-philosophy";
+import { artists } from "@/data/artists";
+import { shops } from "@/data/shops";
 
 type Craft = {
   id: string;
@@ -85,6 +88,9 @@ export default async function CraftDetailPage({
 
   // ギャラリー画像を取得
   const galleryImages = getGalleryImages(craft.name);
+
+  // 哲学ノートを取得
+  const philosophy = getCraftPhilosophy(craft.name);
 
   // 同じカテゴリの関連工芸品を取得
   const { data: relatedData } = await supabase
@@ -172,6 +178,39 @@ export default async function CraftDetailPage({
         </div>
       </section>
 
+      {/* この工芸の哲学 */}
+      {philosophy && (
+        <section className="bg-[#1a1612] py-20 md:py-28">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="md:grid md:grid-cols-[200px_1fr] md:gap-16">
+              <div className="mb-8 md:mb-0">
+                <p className="text-xs tracking-[0.3em] text-stone-light/40 uppercase mb-3">
+                  Philosophy
+                </p>
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-white/90">
+                  哲学
+                </h2>
+              </div>
+              <div>
+                <p className="font-serif text-base leading-[2.2] text-stone-light/60 mb-8">
+                  {philosophy.note}
+                </p>
+                {philosophy.quote && (
+                  <blockquote className="border-l-2 border-stone-light/20 pl-6">
+                    <p className="font-serif text-lg leading-relaxed text-white/70 italic mb-3">
+                      &ldquo;{philosophy.quote.text}&rdquo;
+                    </p>
+                    <footer className="text-sm text-stone-light/40">
+                      ——{philosophy.quote.author}
+                    </footer>
+                  </blockquote>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* 歴史 */}
       <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6">
@@ -236,18 +275,39 @@ export default async function CraftDetailPage({
             </h2>
 
             <div className="space-y-16">
-              {artisans.map((artisan) => (
+              {artisans.map((artisan) => {
+                const featuredArtist = artists.find(
+                  (a) => artisan.name.replace(/\s/g, "") === a.name.replace(/\s/g, ""),
+                );
+                return (
                 <div key={artisan.id} className="md:grid md:grid-cols-[200px_1fr] md:gap-16">
                   <div className="mb-6 md:mb-0">
                     <div className="mb-4">
                       <ArtisanAvatar name={artisan.name} size={80} />
                     </div>
-                    <h3 className="text-xl font-bold text-white/90">{artisan.name}</h3>
+                    {featuredArtist ? (
+                      <Link
+                        href={`/artists/${featuredArtist.slug}`}
+                        className="text-xl font-bold text-white/90 hover:text-indigo transition-colors underline underline-offset-4 decoration-stone-light/20"
+                      >
+                        {artisan.name}
+                      </Link>
+                    ) : (
+                      <h3 className="text-xl font-bold text-white/90">{artisan.name}</h3>
+                    )}
                     {artisan.generation && (
                       <p className="text-sm text-stone-light/40 mt-1">{artisan.generation}</p>
                     )}
                     {artisan.workshop_name && (
                       <p className="text-sm text-stone-light/30 mt-1">{artisan.workshop_name}</p>
+                    )}
+                    {featuredArtist && (
+                      <Link
+                        href={`/artists/${featuredArtist.slug}`}
+                        className="inline-block mt-3 text-xs text-indigo/70 hover:text-indigo transition-colors"
+                      >
+                        プロフィールを見る &rarr;
+                      </Link>
                     )}
                   </div>
 
@@ -277,7 +337,8 @@ export default async function CraftDetailPage({
                     )}
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -325,6 +386,42 @@ export default async function CraftDetailPage({
           </div>
         </section>
       )}
+
+      {/* 関連する工房・店舗 */}
+      {(() => {
+        const relatedShops = shops.filter((s) => s.craftName === craft.name);
+        if (relatedShops.length === 0) return null;
+        return (
+          <section className="py-16 md:py-20">
+            <div className="mx-auto max-w-5xl px-6">
+              <h2 className="text-xl font-bold text-foreground mb-6">
+                この工芸の工房・店舗
+              </h2>
+              <div className="flex flex-wrap gap-4">
+                {relatedShops.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/shops/${s.slug}`}
+                    className="group flex items-center gap-4 rounded-lg border border-stone-light/20 bg-white p-5 hover:shadow-md transition-all"
+                  >
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-amber-900/10 text-2xl font-bold text-amber-800">
+                      {s.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="text-base font-bold text-foreground group-hover:text-indigo transition-colors">
+                        {s.name}
+                      </p>
+                      <p className="text-xs text-stone">
+                        {s.prefecture}{s.city} ・ {s.locations.length}拠点
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* EC連携 & SNSシェア */}
       <section className="py-16 md:py-20">

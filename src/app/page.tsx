@@ -6,6 +6,7 @@ import SearchBar from "@/components/SearchBar";
 import JapanRegionMap from "@/components/JapanRegionMap";
 import { stories, storyCategoryLabels } from "@/data/stories";
 import { getCurrentSeasonFeature, seasonMeta } from "@/data/seasonal";
+import { getUpcomingEvents, eventCategoryColors } from "@/data/events";
 
 // ヒーロー背景画像（Unsplash - 伝統工芸）
 const heroImages = [
@@ -110,9 +111,9 @@ export default async function Home() {
             <span className="text-stone-light/70">紡がれる技。</span>
           </h1>
           <p className="max-w-xl mx-auto text-sm md:text-base leading-relaxed text-stone-light/40 mb-10">
-            千年の時を超えて受け継がれる日本の伝統工芸。
+            AIが描ける時代に、なぜ人は手でつくるのか。
             <br className="hidden md:block" />
-            全国{allCrafts.length}品目の職人の手仕事と、その物語。
+            全国{allCrafts.length}品目の工芸が語る、用の美と暮らしの哲学。
           </p>
 
           {/* 検索バー */}
@@ -304,6 +305,28 @@ export default async function Home() {
         );
       })()}
 
+      {/* ── PHILOSOPHY ── */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <p className="text-xs tracking-[0.3em] text-stone uppercase mb-3">
+            Philosophy
+          </p>
+          <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground leading-tight mb-6">
+            用の美を、暮らしのなかへ。
+          </h2>
+          <p className="font-serif text-base md:text-lg leading-[2.2] text-warm-gray max-w-2xl mx-auto mb-8">
+            AIが描き、ロボットが成形できる時代にあっても、人の手がつくるものには代えがたい美しさがあります。
+            柳宗悦の「用の美」、テクノロジーと手仕事が共存する「テクノ民藝」——ものづくりの哲学を探ります。
+          </p>
+          <Link
+            href="/philosophy"
+            className="inline-flex items-center gap-2 text-sm text-indigo hover:text-foreground transition-colors font-medium"
+          >
+            哲学を読む &rarr;
+          </Link>
+        </div>
+      </section>
+
       {/* ── STORIES ── */}
       <section className="bg-[#1a1612] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
@@ -311,11 +334,11 @@ export default async function Home() {
             <p className="text-xs tracking-[0.3em] text-stone-light/40 uppercase mb-3">
               Stories
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-white/90 leading-tight mb-4">
-              工芸に宿る、物語。
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-white/90 leading-tight mb-4">
+              手から手へ、伝える物語。
             </h2>
             <p className="text-sm leading-relaxed text-stone-light/50 max-w-xl mx-auto">
-              歴史の転換点、職人の声、暮らしの中の工芸——その物語を記録する。
+              哲学、職人の声、暮らしの美学、Craft × Tech——工芸の本質を探る読み物。
             </p>
           </div>
 
@@ -375,6 +398,84 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── EVENTS ── */}
+      {(() => {
+        const upcoming = getUpcomingEvents(3);
+        if (upcoming.length === 0) return null;
+        return (
+          <section className="py-20 md:py-28">
+            <div className="mx-auto max-w-7xl px-6">
+              <div className="text-center mb-14">
+                <p className="text-xs tracking-[0.3em] text-stone uppercase mb-3">
+                  Upcoming Events
+                </p>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight mb-4">
+                  工芸に出会う場所
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {upcoming.map((event) => {
+                  const catInfo =
+                    eventCategoryColors[event.category] ?? {
+                      label: event.category,
+                      color: "bg-stone/10 text-stone",
+                    };
+                  const isKtVace = event.organizer === "KT VACE";
+                  const s = new Date(event.startDate + "T00:00:00");
+                  return (
+                    <div
+                      key={event.id}
+                      className={`rounded-lg border bg-white p-5 ${
+                        isKtVace
+                          ? "border-indigo/30 ring-1 ring-indigo/10"
+                          : "border-stone-light/20"
+                      }`}
+                    >
+                      <div className="flex items-center gap-2 mb-3">
+                        <span
+                          className={`rounded-full px-3 py-1 text-[11px] font-medium ${catInfo.color}`}
+                        >
+                          {catInfo.label}
+                        </span>
+                        {isKtVace && (
+                          <span className="rounded-full bg-indigo/10 px-3 py-1 text-[11px] font-medium text-indigo">
+                            KT VACE
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-sm font-bold text-foreground mb-2 line-clamp-2">
+                        {event.name}
+                      </h3>
+                      <p className="text-[12px] text-warm-gray line-clamp-2 mb-3">
+                        {event.description}
+                      </p>
+                      <div className="text-xs text-stone">
+                        <span>
+                          {s.getMonth() + 1}月{s.getDate()}日〜
+                        </span>
+                        <span className="ml-2">
+                          {event.prefecture} {event.city}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="text-center mt-10">
+                <Link
+                  href="/events"
+                  className="inline-flex items-center gap-2 border-b border-stone-light/40 pb-1 text-sm text-stone hover:text-foreground transition-colors"
+                >
+                  すべてのイベントを見る &rarr;
+                </Link>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
     </>
   );
 }

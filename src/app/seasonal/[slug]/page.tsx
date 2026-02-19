@@ -95,6 +95,19 @@ export default async function SeasonalDetailPage({
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
+      {/* 哲学テキスト */}
+      {feature.philosophy && (
+        <section className="py-12 md:py-16 border-b border-stone-light/20">
+          <div className="mx-auto max-w-3xl px-6">
+            <blockquote className="border-l-2 border-stone-light/30 pl-8 py-2">
+              <p className="font-serif text-base md:text-lg leading-[2.2] text-warm-gray italic">
+                {feature.philosophy}
+              </p>
+            </blockquote>
+          </div>
+        </section>
+      )}
+
       {/* おすすめ工芸品 */}
       <section className="py-12 md:py-16 border-b border-stone-light/20">
         <div className="mx-auto max-w-3xl px-6">

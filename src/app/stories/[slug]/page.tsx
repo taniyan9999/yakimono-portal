@@ -99,11 +99,18 @@ export default async function StoryDetailPage({
             </span>
           </nav>
 
-          <span
-            className={`inline-block rounded-full px-3 py-1 text-[11px] font-medium mb-4 ${cat.color}`}
-          >
-            {cat.label}
-          </span>
+          <div className="flex items-center gap-2 mb-4">
+            <span
+              className={`inline-block rounded-full px-3 py-1 text-[11px] font-medium ${cat.color}`}
+            >
+              {cat.label}
+            </span>
+            {story.philosophyKeyword && (
+              <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-[11px] text-white/60 font-medium">
+                {story.philosophyKeyword}
+              </span>
+            )}
+          </div>
           <h1 className="text-3xl md:text-5xl font-bold text-white/95 leading-tight mb-3">
             {story.title}
           </h1>
@@ -197,6 +204,22 @@ export default async function StoryDetailPage({
               {story.content}
             </ReactMarkdown>
           </div>
+
+          {/* この記事の哲学 */}
+          {story.philosophyKeyword && (
+            <div className="mt-12 rounded-lg bg-[#1a1612] p-8 md:p-10">
+              <p className="text-xs tracking-[0.3em] text-stone-light/40 uppercase mb-2">
+                Philosophy of this story
+              </p>
+              <h3 className="font-serif text-xl md:text-2xl font-bold text-white/90 mb-4">
+                {story.philosophyKeyword}
+              </h3>
+              <p className="font-serif text-sm leading-[2] text-stone-light/60">
+                この記事が探求するのは「{story.philosophyKeyword}」という視点です。
+                工芸品の奥にある哲学を感じながら、あなた自身の暮らしと手仕事の関係を見つめ直してみてください。
+              </p>
+            </div>
+          )}
 
           {/* タグ */}
           {story.tags.length > 0 && (

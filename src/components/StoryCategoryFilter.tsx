@@ -8,10 +8,11 @@ import { storyCategoryLabels } from "@/data/stories";
 
 const tabs: { key: StoryCategory | "all"; label: string }[] = [
   { key: "all", label: "すべて" },
-  { key: "history", label: "歴史" },
+  { key: "philosophy", label: "哲学" },
   { key: "craftsman", label: "職人" },
   { key: "lifestyle", label: "暮らし" },
-  { key: "comparison", label: "比較" },
+  { key: "craft-and-tech", label: "Craft×Tech" },
+  { key: "comparison", label: "知る・選ぶ" },
 ];
 
 export default function StoryCategoryFilter({ stories }: { stories: Story[] }) {
@@ -69,6 +70,11 @@ export default function StoryCategoryFilter({ stories }: { stories: Story[] }) {
                 <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-indigo transition-colors line-clamp-2 mb-2">
                   {story.title}
                 </h3>
+                {story.philosophyKeyword && (
+                  <span className="inline-block rounded bg-amber-900/10 px-2 py-0.5 text-[11px] text-amber-800 font-medium mb-2">
+                    {story.philosophyKeyword}
+                  </span>
+                )}
                 <p className="text-[13px] leading-relaxed text-warm-gray line-clamp-3 mb-4">
                   {story.excerpt}
                 </p>

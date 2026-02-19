@@ -16,13 +16,13 @@ export default function StoriesPage() {
           <p className="text-xs tracking-[0.3em] text-stone-light/40 uppercase mb-6">
             Stories
           </p>
-          <h1 className="text-3xl md:text-5xl font-bold text-white/95 leading-tight mb-6">
-            工芸に宿る、物語。
+          <h1 className="font-serif text-3xl md:text-5xl font-bold text-white/95 leading-tight mb-6">
+            手から手へ、伝える物語。
           </h1>
           <p className="text-sm md:text-base leading-relaxed text-stone-light/50 max-w-2xl mx-auto">
-            一つの工芸品の裏には、何世代にもわたる職人たちの挑戦と継承の物語がある。
+            なぜ手でつくるのか。用の美とは何か。職人の哲学、暮らしの美学、
             <br className="hidden md:block" />
-            歴史の転換点、職人の声、暮らしの中の工芸——その物語を、ここに記録する。
+            そしてCraft × Techの可能性——工芸の本質を探る読み物。
           </p>
         </div>
       </section>

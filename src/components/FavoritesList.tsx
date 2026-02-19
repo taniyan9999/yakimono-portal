@@ -39,12 +39,14 @@ export default function FavoritesList({
   if (favCrafts.length === 0) {
     return (
       <div className="text-center py-20">
-        <div className="text-4xl mb-4">♡</div>
+        <svg className="w-10 h-10 mx-auto mb-4 text-stone-light/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
         <p className="text-warm-gray mb-2">
-          お気に入りの工芸品はまだありません
+          まだ栞を挟んだ工芸品はありません
         </p>
         <p className="text-sm text-stone">
-          工芸品カードのハートマークをクリックして追加できます
+          工芸品ページの栞アイコンをクリックして追加できます
         </p>
         <Link
           href="/"

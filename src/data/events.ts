@@ -1,3 +1,5 @@
+export type EventType = "陶器市" | "展示会" | "体験" | "祭り" | "トークイベント" | "ワークショップ";
+
 export type CraftEvent = {
   id: string;
   name: string;
@@ -7,9 +9,12 @@ export type CraftEvent = {
   prefecture: string;
   city: string;
   venue: string;
-  category: "陶器市" | "展示会" | "体験" | "祭り";
+  category: EventType;
   relatedCraft: string;
   url?: string;
+  organizer?: string;
+  philosophyConnection?: string;
+  isFree?: boolean;
 };
 
 export const eventCategoryColors: Record<string, { label: string; color: string }> = {
@@ -17,6 +22,8 @@ export const eventCategoryColors: Record<string, { label: string; color: string 
   展示会: { label: "展示会", color: "bg-indigo/10 text-indigo" },
   体験: { label: "体験", color: "bg-emerald-900/15 text-emerald-800" },
   祭り: { label: "祭り", color: "bg-rose-900/15 text-rose-800" },
+  トークイベント: { label: "トーク", color: "bg-violet-900/15 text-violet-800" },
+  ワークショップ: { label: "WS", color: "bg-teal-900/15 text-teal-800" },
 };
 
 export const events: CraftEvent[] = [
@@ -60,6 +67,22 @@ export const events: CraftEvent[] = [
     relatedCraft: "九谷焼",
   },
   {
+    id: "e013",
+    name: "KT VACE 用の美トーク vol.1 — なぜ手でつくるのか",
+    description:
+      "柳宗悦の民藝思想を現代に読み解くトークイベント。ゲストに備前焼作家を招き、「手の恩寵」とは何かを語り合います。参加者には備前焼の小皿をプレゼント。",
+    startDate: "2026-03-22",
+    endDate: "2026-03-22",
+    prefecture: "東京都",
+    city: "渋谷区",
+    venue: "KT VACE Studio",
+    category: "トークイベント",
+    relatedCraft: "備前焼",
+    organizer: "KT VACE",
+    philosophyConnection: "「用の美」と「手の恩寵」——なぜ手仕事が生む美は機械に勝るのか。",
+    isFree: true,
+  },
+  {
     id: "e004",
     name: "備前焼まつり",
     description:
@@ -86,6 +109,21 @@ export const events: CraftEvent[] = [
     relatedCraft: "信楽焼",
   },
   {
+    id: "e014",
+    name: "KT VACE × 結城紬 — 手つむぎワークショップ",
+    description:
+      "結城紬の職人から直接、真綿から糸をつむぐ技を学ぶ体験型ワークショップ。素材との対話を体感します。定員15名。",
+    startDate: "2026-06-14",
+    endDate: "2026-06-14",
+    prefecture: "茨城県",
+    city: "結城市",
+    venue: "結城紬ミュージアム",
+    category: "ワークショップ",
+    relatedCraft: "結城紬",
+    organizer: "KT VACE",
+    philosophyConnection: "「素材との対話」——糸の声を指先で聴く体験。",
+  },
+  {
     id: "e006",
     name: "日本伝統工芸展",
     description:
@@ -110,6 +148,22 @@ export const events: CraftEvent[] = [
     venue: "五条坂（東大路通〜川端通）",
     category: "陶器市",
     relatedCraft: "京焼・清水焼",
+  },
+  {
+    id: "e015",
+    name: "KT VACE 用の美トーク vol.2 — Craft × Tech の未来",
+    description:
+      "デジタルアーカイブ、3Dスキャン、オンライン販売——テクノロジーは工芸をどう変えるか。エンジニアと職人が語るCraft × Techの最前線。",
+    startDate: "2026-07-19",
+    endDate: "2026-07-19",
+    prefecture: "東京都",
+    city: "渋谷区",
+    venue: "KT VACE Studio",
+    category: "トークイベント",
+    relatedCraft: "各種伝統工芸",
+    organizer: "KT VACE",
+    philosophyConnection: "テクノロジーは手仕事の「橋」になれるか。",
+    isFree: true,
   },
   {
     id: "e008",
@@ -164,6 +218,21 @@ export const events: CraftEvent[] = [
     relatedCraft: "江戸切子",
   },
   {
+    id: "e016",
+    name: "KT VACE 暮らしの器えらび — 秋の食卓編",
+    description:
+      "秋の食材に合う器の選び方を学ぶワークショップ。備前焼・信楽焼・萩焼の実物を手に取りながら、「用の美」を体感できます。",
+    startDate: "2026-10-03",
+    endDate: "2026-10-03",
+    prefecture: "東京都",
+    city: "渋谷区",
+    venue: "KT VACE Studio",
+    category: "ワークショップ",
+    relatedCraft: "備前焼",
+    organizer: "KT VACE",
+    philosophyConnection: "暮らしの器を選ぶこと——それは「用の美」の実践です。",
+  },
+  {
     id: "e012",
     name: "益子陶器市（秋）",
     description:
@@ -191,7 +260,7 @@ export function getUpcomingEvents(limit?: number): CraftEvent[] {
 export function getEventsByMonth(): Record<string, CraftEvent[]> {
   const grouped: Record<string, CraftEvent[]> = {};
   for (const event of events) {
-    const month = event.startDate.slice(0, 7); // "2026-04"
+    const month = event.startDate.slice(0, 7);
     if (!grouped[month]) grouped[month] = [];
     grouped[month].push(event);
   }

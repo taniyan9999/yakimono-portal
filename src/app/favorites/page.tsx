@@ -22,11 +22,11 @@ export default async function FavoritesPage() {
           <p className="text-xs tracking-[0.3em] text-stone-light/40 uppercase mb-6">
             Favorites
           </p>
-          <h1 className="text-3xl md:text-5xl font-bold text-white/95 leading-tight mb-6">
-            お気に入り
+          <h1 className="font-serif text-3xl md:text-5xl font-bold text-white/95 leading-tight mb-6">
+            あなたが選んだ工芸
           </h1>
           <p className="text-sm md:text-base leading-relaxed text-stone-light/50 max-w-2xl mx-auto">
-            気になる工芸品をブックマーク。あなただけのコレクションを作りましょう。
+            栞を挟んだ工芸品たち。いつか手に取る日のために。
           </p>
         </div>
       </section>
