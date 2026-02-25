@@ -5,12 +5,17 @@ import { supabase } from "@/lib/supabase";
 import ArtisanAvatar from "@/components/ArtisanAvatar";
 import ArtisanDirectory from "@/components/ArtisanDirectory";
 import type { ArtisanWithCraft } from "@/components/ArtisanDirectory";
+import { canonical } from "@/lib/metadata";
 import type { Metadata } from "next";
 
+const desc = "伝統を受け継ぎ、今を生きる職人と工房。KOGEI PORTALが紹介する、工芸のつくり手たち。";
+
 export const metadata: Metadata = {
-  title: "つくる人たち | KOGEI PORTAL",
-  description:
-    "伝統を受け継ぎ、今を生きる職人と工房。KOGEI PORTALが紹介する、工芸のつくり手たち。",
+  title: "つくる人たち",
+  description: desc,
+  alternates: { canonical: canonical("/craftspeople") },
+  openGraph: { title: "つくる人たち", description: desc },
+  twitter: { card: "summary_large_image", title: "つくる人たち", description: desc },
 };
 
 export default async function CraftsPeoplePage() {

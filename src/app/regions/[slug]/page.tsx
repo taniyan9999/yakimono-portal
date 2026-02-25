@@ -2,6 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { regions, getRegionBySlug } from "@/data/regions";
 import { getArtistsByRegion } from "@/data/artists";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { canonical, SITE_URL } from "@/lib/metadata";
 import type { Metadata } from "next";
 
 type Props = {
@@ -16,9 +19,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const region = getRegionBySlug(slug);
   if (!region) return {};
+  const title = region.name;
+  const url = canonical(`/regions/${slug}`);
+
   return {
-    title: `${region.name}｜やきものポータル`,
+    title,
     description: region.description,
+    alternates: { canonical: url },
+    openGraph: { title, description: region.description, url },
+    twitter: { card: "summary_large_image", title, description: region.description },
   };
 }
 
@@ -31,6 +40,12 @@ export default async function RegionPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "ホーム", url: SITE_URL },
+          { name: region.name, url: `${SITE_URL}/regions/${slug}` },
+        ])}
+      />
       {/* Breadcrumb */}
       <nav className="mb-8 text-sm text-warm-gray">
         <Link href="/" className="hover:text-indigo transition-colors">

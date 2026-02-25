@@ -4,10 +4,14 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import { type Craft, categoryMeta, categoryOrder, defaultMeta } from "@/lib/crafts";
-import { SITE_URL, SITE_NAME } from "@/lib/metadata";
+import { canonical, SITE_URL } from "@/lib/metadata";
 import { collectionPageJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumb from "@/components/Breadcrumb";
+
+export function generateStaticParams() {
+  return categoryOrder.map((name) => ({ name: encodeURIComponent(name) }));
+}
 
 export async function generateMetadata({
   params,
@@ -19,20 +23,16 @@ export async function generateMetadata({
   const meta = categoryMeta[categoryName];
   if (!meta) return {};
 
-  const { count } = await supabase
-    .from("crafts")
-    .select("id", { count: "exact", head: true })
-    .eq("category", categoryName);
-
   const title = `${categoryName}（${meta.en}）`;
-  const description = `日本の伝統的工芸品「${categoryName}」${count ? `全${count}品目` : ""}の一覧。産地・歴史・技法を詳しく紹介します。`;
-  const url = `${SITE_URL}/category/${encodeURIComponent(categoryName)}`;
+  const description = `日本の伝統的工芸品「${categoryName}」の一覧。産地・技法・歴史を都道府県別に紹介します。`;
+  const url = canonical(`/category/${encodeURIComponent(categoryName)}`);
 
   return {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title: `${title} | ${SITE_NAME}`, description, url },
+    openGraph: { title, description, url },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
@@ -62,21 +62,19 @@ export default async function CategoryPage({
   }
   const prefectures = Object.keys(byPrefecture).sort();
 
-  const categoryUrl = `${SITE_URL}/category/${encodeURIComponent(categoryName)}`;
-
   return (
     <>
       <JsonLd
         data={[
           collectionPageJsonLd({
-            name: `${categoryName} — 日本の伝統的工芸品`,
-            description: `日本の伝統的工芸品「${categoryName}」全${items.length}品目の一覧。`,
-            url: categoryUrl,
+            name: `${categoryName}（${meta.en}）`,
+            description: `日本の伝統的工芸品「${categoryName}」の一覧。産地・技法・歴史を都道府県別に紹介します。`,
+            url: `${SITE_URL}/category/${encodeURIComponent(categoryName)}`,
             numberOfItems: items.length,
           }),
           breadcrumbJsonLd([
             { name: "ホーム", url: SITE_URL },
-            { name: categoryName, url: categoryUrl },
+            { name: categoryName, url: `${SITE_URL}/category/${encodeURIComponent(categoryName)}` },
           ]),
         ]}
       />

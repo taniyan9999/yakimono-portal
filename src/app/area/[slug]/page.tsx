@@ -4,10 +4,15 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import { type Craft, categoryMeta, defaultMeta, areaRegions } from "@/lib/crafts";
-import { SITE_URL, SITE_NAME } from "@/lib/metadata";
+import { canonical, SITE_URL } from "@/lib/metadata";
 import { collectionPageJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumb from "@/components/Breadcrumb";
+import { areaContent } from "@/data/area-content";
+
+export function generateStaticParams() {
+  return areaRegions.map((r) => ({ slug: r.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -18,20 +23,16 @@ export async function generateMetadata({
   const region = areaRegions.find((r) => r.slug === slug);
   if (!region) return {};
 
-  const { count } = await supabase
-    .from("crafts")
-    .select("id", { count: "exact", head: true })
-    .in("prefecture", region.prefectures);
-
   const title = `${region.name}の伝統工芸品`;
-  const description = `${region.name}（${region.prefectures.join("・")}）の伝統的工芸品${count ? `全${count}品目` : ""}を紹介。`;
-  const url = `${SITE_URL}/area/${slug}`;
+  const description = `${region.name}（${region.prefectures.join("・")}）の伝統的工芸品一覧。都道府県別に工芸品の歴史・技法を紹介。`;
+  const url = canonical(`/area/${slug}`);
 
   return {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title: `${title} | ${SITE_NAME}`, description, url },
+    openGraph: { title, description, url },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
@@ -63,22 +64,19 @@ export default async function AreaPage({
   // 定義順でソート
   const prefectures = region.prefectures.filter((p) => byPrefecture[p]?.length);
 
-  const areaUrl = `${SITE_URL}/area/${slug}`;
-
   return (
     <>
       <JsonLd
         data={[
           collectionPageJsonLd({
             name: `${region.name}の伝統工芸品`,
-            description: `${region.name}（${region.prefectures.join("・")}）の伝統的工芸品全${items.length}品目。`,
-            url: areaUrl,
+            description: `${region.name}（${region.prefectures.join("・")}）の伝統的工芸品一覧。`,
+            url: `${SITE_URL}/area/${slug}`,
             numberOfItems: items.length,
           }),
           breadcrumbJsonLd([
             { name: "ホーム", url: SITE_URL },
-            { name: "産地から探す", url: `${SITE_URL}/#area` },
-            { name: region.name, url: areaUrl },
+            { name: region.name, url: `${SITE_URL}/area/${slug}` },
           ]),
         ]}
       />
@@ -109,6 +107,75 @@ export default async function AreaPage({
           <p className="text-lg text-white/50">{items.length}品目</p>
         </div>
       </section>
+
+      {/* 地域コンテンツ */}
+      {areaContent[slug] && (() => {
+        const c = areaContent[slug];
+        return (
+          <>
+            {/* 概要 */}
+            <section className="bg-white py-14 md:py-20 border-b border-stone-light/20">
+              <div className="mx-auto max-w-4xl px-6">
+                <p className="text-xs tracking-[0.3em] text-indigo/70 uppercase mb-4">Overview</p>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6">{region.name}の伝統工芸</h2>
+                <p className="text-sm md:text-base leading-[2] text-warm-gray">{c.overview}</p>
+              </div>
+            </section>
+
+            {/* ハイライト */}
+            <section className="bg-cream py-14 md:py-20 border-b border-stone-light/20">
+              <div className="mx-auto max-w-4xl px-6">
+                <p className="text-xs tracking-[0.3em] text-indigo/70 uppercase mb-4">Highlights</p>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-8">代表的な工芸品</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {c.highlights.map((h, i) => (
+                    <div key={i} className="bg-white rounded-lg p-6 border border-stone-light/20">
+                      <h3 className="text-base font-bold text-foreground mb-3">{h.title}</h3>
+                      <p className="text-sm leading-[1.9] text-warm-gray">{h.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 歴史 */}
+            <section className="bg-white py-14 md:py-20 border-b border-stone-light/20">
+              <div className="mx-auto max-w-4xl px-6">
+                <p className="text-xs tracking-[0.3em] text-indigo/70 uppercase mb-4">History</p>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6">歴史と文化的背景</h2>
+                <p className="text-sm md:text-base leading-[2] text-warm-gray">{c.history}</p>
+              </div>
+            </section>
+
+            {/* 自然と素材 */}
+            <section className="bg-cream py-14 md:py-20 border-b border-stone-light/20">
+              <div className="mx-auto max-w-4xl px-6">
+                <p className="text-xs tracking-[0.3em] text-indigo/70 uppercase mb-4">Nature & Materials</p>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6">自然環境と素材</h2>
+                <p className="text-sm md:text-base leading-[2] text-warm-gray">{c.nature}</p>
+              </div>
+            </section>
+
+            {/* 職人 */}
+            <section className="bg-white py-14 md:py-20 border-b border-stone-light/20">
+              <div className="mx-auto max-w-4xl px-6">
+                <p className="text-xs tracking-[0.3em] text-indigo/70 uppercase mb-4">Artisans</p>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6">職人の世界</h2>
+                <p className="text-sm md:text-base leading-[2] text-warm-gray">{c.artisans}</p>
+              </div>
+            </section>
+
+            {/* 現代の取り組み */}
+            <section className="bg-cream py-14 md:py-20 border-b border-stone-light/20">
+              <div className="mx-auto max-w-4xl px-6">
+                <p className="text-xs tracking-[0.3em] text-indigo/70 uppercase mb-4">Modern Initiatives</p>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6">現代における取り組み</h2>
+                <p className="text-sm md:text-base leading-[2] text-warm-gray">{c.modern}</p>
+              </div>
+            </section>
+          </>
+        );
+      })()}
 
       {/* 都道府県フィルタ */}
       <section className="border-b border-stone-light/20 bg-white">

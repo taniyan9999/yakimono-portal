@@ -3,8 +3,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
-import { SITE_URL, SITE_NAME } from "@/lib/metadata";
+import { canonical } from "@/lib/metadata";
 import { craftJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
+import { SITE_URL } from "@/lib/metadata";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumb from "@/components/Breadcrumb";
 import ManufacturingSteps from "@/components/ManufacturingSteps";
@@ -60,7 +61,11 @@ const storyTypeLabels: Record<string, { label: string; color: string }> = {
   cultural_significance: { label: "文化的意義", color: "bg-stone/10 text-stone" },
 };
 
-/* ---------- SEO: generateMetadata ---------- */
+export async function generateStaticParams() {
+  const { data } = await supabase.from("crafts").select("id");
+  return (data ?? []).map((c) => ({ id: c.id }));
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -69,30 +74,31 @@ export async function generateMetadata({
   const { id } = await params;
   const { data: craft } = await supabase
     .from("crafts")
-    .select("name, name_kana, prefecture, city, category, description, image_url")
+    .select("name, description, category, prefecture, city, image_url")
     .eq("id", id)
     .single();
-
   if (!craft) return {};
 
   const title = `${craft.name}（${craft.prefecture}）`;
-  const description = `${craft.name}（${craft.name_kana}）は${craft.prefecture}${craft.city}の${craft.category}。${craft.description.slice(0, 120)}`;
-  const url = `${SITE_URL}/crafts/${id}`;
+  const description = `${craft.name}は${craft.prefecture}${craft.city}の${craft.category}。${craft.description?.slice(0, 120)}`;
+  const url = canonical(`/crafts/${id}`);
 
   return {
     title,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${title} | ${SITE_NAME}`,
+      title,
       description,
       url,
       type: "article",
-      ...(craft.image_url ? { images: [{ url: craft.image_url, width: 1200, height: 630, alt: craft.name }] } : {}),
+      ...(craft.image_url
+        ? { images: [{ url: craft.image_url, width: 1200, height: 630, alt: craft.name }] }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${SITE_NAME}`,
+      title,
       description,
       ...(craft.image_url ? { images: [craft.image_url] } : {}),
     },
@@ -151,47 +157,43 @@ export default async function CraftDetailPage({
     image_url: string | null;
   }[];
 
-  // JSON-LD structured data
-  const craftUrl = `${SITE_URL}/crafts/${id}`;
-  const jsonLdData = [
-    craftJsonLd({
-      name: craft.name,
-      description: craft.description,
-      url: craftUrl,
-      image: craft.image_url,
-      category: craft.category,
-      prefecture: craft.prefecture,
-      city: craft.city,
-      designatedYear: craft.designated_year,
-    }),
-    breadcrumbJsonLd([
-      { name: "ホーム", url: SITE_URL },
-      { name: craft.category, url: `${SITE_URL}/category/${encodeURIComponent(craft.category)}` },
-      { name: craft.name, url: craftUrl },
-    ]),
-    faqJsonLd([
-      {
-        question: `${craft.name}とは何ですか？`,
-        answer: craft.description,
-      },
-      {
-        question: `${craft.name}の産地はどこですか？`,
-        answer: `${craft.name}は${craft.prefecture}${craft.city}で生産されている${craft.category}です。${craft.designated_year ? `${craft.designated_year}年に経済産業大臣指定伝統的工芸品に指定されています。` : ""}`,
-      },
-      ...(craft.technique
-        ? [
-            {
-              question: `${craft.name}の技法・特徴は？`,
-              answer: craft.technique,
-            },
-          ]
-        : []),
-    ]),
-  ];
-
   return (
     <>
-      <JsonLd data={jsonLdData} />
+      <JsonLd
+        data={[
+          craftJsonLd({
+            name: craft.name,
+            description: craft.description,
+            url: `${SITE_URL}/crafts/${id}`,
+            image: craft.image_url,
+            category: craft.category,
+            prefecture: craft.prefecture,
+            city: craft.city,
+            designatedYear: craft.designated_year,
+          }),
+          breadcrumbJsonLd([
+            { name: "ホーム", url: SITE_URL },
+            { name: craft.category, url: `${SITE_URL}/category/${encodeURIComponent(craft.category)}` },
+            { name: craft.name, url: `${SITE_URL}/crafts/${id}` },
+          ]),
+          faqJsonLd([
+            {
+              question: `${craft.name}とは何ですか？`,
+              answer: craft.description,
+            },
+            {
+              question: `${craft.name}の産地はどこですか？`,
+              answer: `${craft.name}は${craft.prefecture}${craft.city}で生産されている${craft.category}です。${craft.designated_year ? `${craft.designated_year}年に経済産業大臣指定伝統的工芸品に指定されています。` : ""}`,
+            },
+            ...(craft.technique
+              ? [{
+                  question: `${craft.name}の技法・特徴は？`,
+                  answer: craft.technique,
+                }]
+              : []),
+          ]),
+        ]}
+      />
       <Breadcrumb
         items={[
           { name: "ホーム", href: "/" },

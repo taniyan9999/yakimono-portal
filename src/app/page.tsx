@@ -4,6 +4,9 @@ import { supabase } from "@/lib/supabase";
 import { type Craft, categoryMeta, categoryOrder, defaultMeta, areaRegions } from "@/lib/crafts";
 import SearchBar from "@/components/SearchBar";
 import JapanRegionMap from "@/components/JapanRegionMap";
+import JsonLd from "@/components/JsonLd";
+import { webPageJsonLd } from "@/lib/jsonld";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/metadata";
 import { stories, storyCategoryLabels } from "@/data/stories";
 import { getCurrentSeasonFeature, seasonMeta } from "@/data/seasonal";
 import { getUpcomingEvents, eventCategoryColors } from "@/data/events";
@@ -82,6 +85,13 @@ export default async function Home() {
 
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          name: `${SITE_NAME} | 日本の伝統工芸品データベース`,
+          description: SITE_DESCRIPTION,
+          url: SITE_URL,
+        })}
+      />
       {/* Hero with Image Grid */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[#1a1612]">
         {/* 背景画像グリッド */}

@@ -1,10 +1,14 @@
+import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import { type Craft } from "@/lib/crafts";
 import FavoritesList from "@/components/FavoritesList";
+import { canonical } from "@/lib/metadata";
 
-export const metadata = {
-  title: "お気に入り | KOGEI PORTAL",
+export const metadata: Metadata = {
+  title: "お気に入り",
   description: "お気に入りに保存した伝統工芸品の一覧。",
+  alternates: { canonical: canonical("/favorites") },
+  robots: { index: false, follow: true },
 };
 
 export default async function FavoritesPage() {

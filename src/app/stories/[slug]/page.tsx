@@ -8,6 +8,9 @@ import {
   getRelatedStories,
   storyCategoryLabels,
 } from "@/data/stories";
+import JsonLd from "@/components/JsonLd";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import { canonical, SITE_URL } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return stories.map((s) => ({ slug: s.slug }));
@@ -22,9 +25,11 @@ export async function generateMetadata({
   const story = getStoryBySlug(slug);
   if (!story) return {};
 
+  const url = canonical(`/stories/${slug}`);
   return {
-    title: `${story.title} | KOGEI PORTAL`,
+    title: story.title,
     description: story.excerpt,
+    alternates: { canonical: url },
     openGraph: {
       title: story.title,
       description: story.excerpt,
@@ -65,6 +70,25 @@ export default async function StoryDetailPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: story.title,
+            description: story.excerpt,
+            url: `${SITE_URL}/stories/${slug}`,
+            image: story.coverImage,
+            publishedAt: story.publishedAt,
+            updatedAt: story.updatedAt,
+            authorName: story.author.name,
+            tags: story.tags,
+          }),
+          breadcrumbJsonLd([
+            { name: "ホーム", url: SITE_URL },
+            { name: "物語", url: `${SITE_URL}/stories` },
+            { name: story.title, url: `${SITE_URL}/stories/${slug}` },
+          ]),
+        ]}
+      />
       {/* ヒーロー */}
       <section className="relative min-h-[50vh] flex items-end overflow-hidden bg-[#1a1612]">
         <Image

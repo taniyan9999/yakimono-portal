@@ -1,15 +1,47 @@
+import type { Metadata } from "next";
 import { events } from "@/data/events";
 import EventFilter from "@/components/EventFilter";
+import JsonLd from "@/components/JsonLd";
+import { eventJsonLd } from "@/lib/jsonld";
+import { canonical } from "@/lib/metadata";
 
-export const metadata = {
-  title: "イベントカレンダー | KOGEI PORTAL",
+export const metadata: Metadata = {
+  title: "イベントカレンダー",
   description:
     "全国の陶器市・展示会・体験イベント・工芸祭り、KT VACEトークイベントの年間スケジュール。",
+  alternates: { canonical: canonical("/events") },
+  openGraph: {
+    title: "イベントカレンダー",
+    description:
+      "全国の陶器市・展示会・体験イベント・工芸祭り、KT VACEトークイベントの年間スケジュール。",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "イベントカレンダー",
+    description:
+      "全国の陶器市・展示会・体験イベント・工芸祭り、KT VACEトークイベントの年間スケジュール。",
+  },
 };
 
 export default function EventsPage() {
+  const eventJsonLdList = events.map((e) =>
+    eventJsonLd({
+      name: e.name,
+      description: e.description,
+      startDate: e.startDate,
+      endDate: e.endDate,
+      location: e.venue,
+      prefecture: e.prefecture,
+      city: e.city,
+      url: e.url,
+      organizer: e.organizer,
+      isFree: e.isFree,
+    }),
+  );
+
   return (
     <>
+      <JsonLd data={eventJsonLdList} />
       {/* ヒーロー */}
       <section className="bg-[#1a1612] py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-6 text-center">

@@ -1,15 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import {
   seasonalFeatures,
   seasonMeta,
   getCurrentSeasonFeature,
 } from "@/data/seasonal";
+import { canonical } from "@/lib/metadata";
 
-export const metadata = {
-  title: "季節の特集 | KOGEI PORTAL",
-  description:
-    "春夏秋冬、季節ごとに楽しむ日本の伝統工芸。旬の器、季節の贈り物、工芸イベント情報をお届けします。",
+const desc =
+  "春夏秋冬、季節ごとに楽しむ日本の伝統工芸。旬の器、季節の贈り物、工芸イベント情報をお届けします。";
+
+export const metadata: Metadata = {
+  title: "季節の特集",
+  description: desc,
+  alternates: { canonical: canonical("/seasonal") },
+  openGraph: { title: "季節の特集", description: desc },
+  twitter: { card: "summary_large_image", title: "季節の特集", description: desc },
 };
 
 export default function SeasonalPage() {

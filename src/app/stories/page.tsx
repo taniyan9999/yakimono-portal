@@ -1,10 +1,17 @@
+import type { Metadata } from "next";
 import { stories } from "@/data/stories";
 import StoryCategoryFilter from "@/components/StoryCategoryFilter";
+import { canonical } from "@/lib/metadata";
 
-export const metadata = {
-  title: "物語 | KOGEI PORTAL",
-  description:
-    "日本の伝統工芸にまつわる物語。歴史、職人インタビュー、暮らしへの取り入れ方、産地比較など、工芸の奥深さを伝える読み物。",
+const desc =
+  "日本の伝統工芸にまつわる物語。歴史、職人インタビュー、暮らしへの取り入れ方、産地比較など、工芸の奥深さを伝える読み物。";
+
+export const metadata: Metadata = {
+  title: "物語",
+  description: desc,
+  alternates: { canonical: canonical("/stories") },
+  openGraph: { title: "物語", description: desc },
+  twitter: { card: "summary_large_image", title: "物語", description: desc },
 };
 
 export default function StoriesPage() {

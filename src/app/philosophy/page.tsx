@@ -3,11 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { philosophySections } from "@/data/philosophy";
 import FadeInSection from "@/components/FadeInSection";
+import { canonical } from "@/lib/metadata";
+
+const desc =
+  "なぜ手でつくるのか。用の美とは何か。柳宗悦の民藝思想、テクノ民藝の視点、KT VACEの「Craft × Tech」哲学を通じて、日本の伝統工芸の本質を探ります。";
 
 export const metadata: Metadata = {
-  title: "哲学 | KOGEI PORTAL",
-  description:
-    "なぜ手でつくるのか。用の美とは何か。柳宗悦の民藝思想、テクノ民藝の視点、KT VACEの「Craft × Tech」哲学を通じて、日本の伝統工芸の本質を探ります。",
+  title: "哲学",
+  description: desc,
+  alternates: { canonical: canonical("/philosophy") },
+  openGraph: { title: "哲学", description: desc },
+  twitter: { card: "summary_large_image", title: "哲学", description: desc },
 };
 
 export default function PhilosophyPage() {

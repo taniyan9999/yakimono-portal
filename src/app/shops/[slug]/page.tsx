@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { shops, getShopBySlug } from "@/data/shops";
 import { artists } from "@/data/artists";
 import FadeInSection from "@/components/FadeInSection";
+import JsonLd from "@/components/JsonLd";
+import { localBusinessJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import { canonical, SITE_URL } from "@/lib/metadata";
 import type { Metadata } from "next";
 
 type Props = {
@@ -17,9 +20,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const shop = getShopBySlug(slug);
   if (!shop) return {};
+  const title = `${shop.name}（${shop.craftName}）`;
+  const desc = shop.description.split("\n\n")[0];
+  const url = canonical(`/shops/${slug}`);
+
   return {
-    title: `${shop.name}（${shop.craftName}）｜KOGEI PORTAL`,
-    description: shop.description.split("\n\n")[0],
+    title,
+    description: desc,
+    alternates: { canonical: url },
+    openGraph: { title, description: desc, url },
+    twitter: { card: "summary_large_image", title, description: desc },
   };
 }
 
@@ -39,8 +49,29 @@ export default async function ShopPage({ params }: Props) {
     (a) => a.prefecture === shop.prefecture && a.city === shop.city,
   );
 
+  const hqLocation = shop.locations.find((l) => l.type === "headquarters");
+
   return (
     <>
+      <JsonLd
+        data={[
+          localBusinessJsonLd({
+            name: shop.name,
+            description: shop.description.split("\n\n")[0],
+            url: `${SITE_URL}/shops/${slug}`,
+            address: hqLocation?.address,
+            prefecture: shop.prefecture,
+            city: shop.city,
+            telephone: hqLocation?.tel,
+            openingHours: hqLocation?.hours ?? undefined,
+          }),
+          breadcrumbJsonLd([
+            { name: "ホーム", url: SITE_URL },
+            { name: "つくる人たち", url: `${SITE_URL}/craftspeople` },
+            { name: shop.name, url: `${SITE_URL}/shops/${slug}` },
+          ]),
+        ]}
+      />
       {/* ヒーロー */}
       <section className="relative bg-[#1a1612] py-24 md:py-32">
         <div className="absolute inset-0 bg-gradient-to-b from-[#2c2420]/80 via-[#1a1612]/90 to-[#0d0b09]" />

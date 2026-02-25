@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import { artists, getArtistBySlug } from "@/data/artists";
 import { shops } from "@/data/shops";
 import ArtisanAvatar from "@/components/ArtisanAvatar";
+import JsonLd from "@/components/JsonLd";
+import { personJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import { canonical, SITE_URL } from "@/lib/metadata";
 import type { Metadata } from "next";
 
 type Props = {
@@ -18,9 +21,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const artist = getArtistBySlug(slug);
   if (!artist) return {};
+  const title = `${artist.name}（${artist.regionName}）`;
+  const url = canonical(`/artists/${slug}`);
+  const sameAs: string[] = [];
+  if (artist.links?.website) sameAs.push(artist.links.website);
+  if (artist.links?.instagram) sameAs.push(artist.links.instagram);
+
   return {
-    title: `${artist.name}（${artist.regionName}）｜KOGEI PORTAL`,
+    title,
     description: artist.style,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description: artist.style,
+      url,
+      type: "profile",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: artist.style,
+    },
   };
 }
 
@@ -36,8 +57,28 @@ export default async function ArtistPage({ params }: Props) {
     ? shops.filter((s) => s.prefecture === artist.prefecture && s.city === artist.city)
     : [];
 
+  const sameAs: string[] = [];
+  if (artist.links?.website) sameAs.push(artist.links.website);
+  if (artist.links?.instagram) sameAs.push(artist.links.instagram);
+
   return (
     <>
+      <JsonLd
+        data={[
+          personJsonLd({
+            name: artist.name,
+            description: artist.style,
+            url: `${SITE_URL}/artists/${slug}`,
+            jobTitle: artist.title ?? "伝統工芸士",
+            sameAs: sameAs.length > 0 ? sameAs : undefined,
+          }),
+          breadcrumbJsonLd([
+            { name: "ホーム", url: SITE_URL },
+            { name: "つくる人たち", url: `${SITE_URL}/craftspeople` },
+            { name: artist.name, url: `${SITE_URL}/artists/${slug}` },
+          ]),
+        ]}
+      />
       {/* ヒーロー */}
       <section className="relative bg-[#1a1612] py-24 md:py-32">
         <div className="absolute inset-0 bg-gradient-to-b from-[#2c2420]/80 via-[#1a1612]/90 to-[#0d0b09]" />

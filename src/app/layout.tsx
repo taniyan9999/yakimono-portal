@@ -26,9 +26,6 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
-  alternates: {
-    canonical: SITE_URL,
-  },
   openGraph: {
     type: "website",
     locale: "ja_JP",
@@ -37,9 +34,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-  },
-  other: {
-    "llms-txt": `${SITE_URL}/llms.txt`,
   },
 };
 

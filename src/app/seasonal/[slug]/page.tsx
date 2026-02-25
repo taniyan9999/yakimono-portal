@@ -7,6 +7,9 @@ import {
   getFeatureBySlug,
   seasonMeta,
 } from "@/data/seasonal";
+import JsonLd from "@/components/JsonLd";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import { canonical, SITE_URL } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return seasonalFeatures.map((f) => ({ slug: f.slug }));
@@ -21,13 +24,22 @@ export async function generateMetadata({
   const feature = getFeatureBySlug(slug);
   if (!feature) return {};
 
+  const url = canonical(`/seasonal/${slug}`);
   return {
-    title: `${feature.title} | KOGEI PORTAL`,
+    title: feature.title,
     description: feature.description,
+    alternates: { canonical: url },
     openGraph: {
       title: feature.title,
       description: feature.description,
+      url,
       images: [{ url: feature.coverImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: feature.title,
+      description: feature.description,
+      images: [feature.coverImage],
     },
   };
 }
@@ -45,6 +57,22 @@ export default async function SeasonalDetailPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: feature.title,
+            description: feature.description,
+            url: `${SITE_URL}/seasonal/${slug}`,
+            image: feature.coverImage,
+            tags: feature.tags,
+          }),
+          breadcrumbJsonLd([
+            { name: "ホーム", url: SITE_URL },
+            { name: "季節の特集", url: `${SITE_URL}/seasonal` },
+            { name: feature.title, url: `${SITE_URL}/seasonal/${slug}` },
+          ]),
+        ]}
+      />
       {/* ヒーロー */}
       <section className="relative min-h-[50vh] flex items-end overflow-hidden bg-[#1a1612]">
         <Image

@@ -1,8 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import { type Craft, categoryMeta, defaultMeta } from "@/lib/crafts";
 import SearchBar from "@/components/SearchBar";
+import { canonical } from "@/lib/metadata";
+
+export const metadata: Metadata = {
+  title: "検索",
+  description: "日本全国244品目の伝統的工芸品を名前・産地・カテゴリで検索。",
+  alternates: { canonical: canonical("/search") },
+  robots: { index: false, follow: true },
+};
 
 export default async function SearchPage({
   searchParams,
