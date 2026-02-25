@@ -1,8 +1,39 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import { type Craft, categoryMeta, categoryOrder, defaultMeta } from "@/lib/crafts";
+import { SITE_URL, SITE_NAME } from "@/lib/metadata";
+import { collectionPageJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import JsonLd from "@/components/JsonLd";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ name: string }>;
+}): Promise<Metadata> {
+  const { name } = await params;
+  const categoryName = decodeURIComponent(name);
+  const meta = categoryMeta[categoryName];
+  if (!meta) return {};
+
+  const { count } = await supabase
+    .from("crafts")
+    .select("id", { count: "exact", head: true })
+    .eq("category", categoryName);
+
+  const title = `${categoryName}（${meta.en}）`;
+  const description = `日本の伝統的工芸品「${categoryName}」${count ? `全${count}品目` : ""}の一覧。産地・歴史・技法を詳しく紹介します。`;
+  const url = `${SITE_URL}/category/${encodeURIComponent(categoryName)}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title: `${title} | ${SITE_NAME}`, description, url },
+  };
+}
 
 export default async function CategoryPage({
   params,
@@ -30,8 +61,24 @@ export default async function CategoryPage({
   }
   const prefectures = Object.keys(byPrefecture).sort();
 
+  const categoryUrl = `${SITE_URL}/category/${encodeURIComponent(categoryName)}`;
+
   return (
     <>
+      <JsonLd
+        data={[
+          collectionPageJsonLd({
+            name: `${categoryName} — 日本の伝統的工芸品`,
+            description: `日本の伝統的工芸品「${categoryName}」全${items.length}品目の一覧。`,
+            url: categoryUrl,
+            numberOfItems: items.length,
+          }),
+          breadcrumbJsonLd([
+            { name: "ホーム", url: SITE_URL },
+            { name: categoryName, url: categoryUrl },
+          ]),
+        ]}
+      />
       {/* ヒーロー */}
       <section className={`relative overflow-hidden bg-gradient-to-br ${meta.gradient}`}>
         <div className="absolute inset-0 bg-black/20" />
