@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import Link from "next/link";
 import Header from "@/components/Header";
+import JsonLd from "@/components/JsonLd";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, DEFAULT_OG_IMAGE } from "@/lib/metadata";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -17,9 +20,27 @@ const notoSerifJP = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  title: "KOGEI PORTAL | 日本の伝統工芸品データベース",
-  description:
-    "日本全国244品目の伝統的工芸品を紹介するポータルサイト。陶磁器、織物、漆器、金工品など15カテゴリの工芸品の歴史・技法・職人の物語を発信します。",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | 日本の伝統工芸品データベース`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    siteName: SITE_NAME,
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  other: {
+    "llms-txt": `${SITE_URL}/llms.txt`,
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${notoSansJP.variable} ${notoSerifJP.variable} font-sans antialiased`}>
+        <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">{children}</main>

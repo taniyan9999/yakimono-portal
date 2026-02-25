@@ -1,8 +1,39 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import { type Craft, categoryMeta, defaultMeta, areaRegions } from "@/lib/crafts";
+import { SITE_URL, SITE_NAME } from "@/lib/metadata";
+import { collectionPageJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import JsonLd from "@/components/JsonLd";
+import Breadcrumb from "@/components/Breadcrumb";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const region = areaRegions.find((r) => r.slug === slug);
+  if (!region) return {};
+
+  const { count } = await supabase
+    .from("crafts")
+    .select("id", { count: "exact", head: true })
+    .in("prefecture", region.prefectures);
+
+  const title = `${region.name}の伝統工芸品`;
+  const description = `${region.name}（${region.prefectures.join("・")}）の伝統的工芸品${count ? `全${count}品目` : ""}を紹介。`;
+  const url = `${SITE_URL}/area/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title: `${title} | ${SITE_NAME}`, description, url },
+  };
+}
 
 export default async function AreaPage({
   params,
@@ -32,8 +63,32 @@ export default async function AreaPage({
   // 定義順でソート
   const prefectures = region.prefectures.filter((p) => byPrefecture[p]?.length);
 
+  const areaUrl = `${SITE_URL}/area/${slug}`;
+
   return (
     <>
+      <JsonLd
+        data={[
+          collectionPageJsonLd({
+            name: `${region.name}の伝統工芸品`,
+            description: `${region.name}（${region.prefectures.join("・")}）の伝統的工芸品全${items.length}品目。`,
+            url: areaUrl,
+            numberOfItems: items.length,
+          }),
+          breadcrumbJsonLd([
+            { name: "ホーム", url: SITE_URL },
+            { name: "産地から探す", url: `${SITE_URL}/#area` },
+            { name: region.name, url: areaUrl },
+          ]),
+        ]}
+      />
+      <Breadcrumb
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "産地から探す", href: "/#area" },
+          { name: region.name },
+        ]}
+      />
       {/* ヒーロー */}
       <section className="relative overflow-hidden bg-[#1a1612]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#2c2420]/80 to-[#0d0b09]" />
