@@ -7,6 +7,7 @@ import { type Craft, categoryMeta, defaultMeta, areaRegions } from "@/lib/crafts
 import { SITE_URL, SITE_NAME } from "@/lib/metadata";
 import { collectionPageJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 import JsonLd from "@/components/JsonLd";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export async function generateMetadata({
   params,
@@ -79,6 +80,13 @@ export default async function AreaPage({
             { name: "産地から探す", url: `${SITE_URL}/#area` },
             { name: region.name, url: areaUrl },
           ]),
+        ]}
+      />
+      <Breadcrumb
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "産地から探す", href: "/#area" },
+          { name: region.name },
         ]}
       />
       {/* ヒーロー */}

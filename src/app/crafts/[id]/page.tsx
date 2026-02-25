@@ -6,6 +6,7 @@ import { supabase } from "@/lib/supabase";
 import { SITE_URL, SITE_NAME } from "@/lib/metadata";
 import { craftJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
 import JsonLd from "@/components/JsonLd";
+import Breadcrumb from "@/components/Breadcrumb";
 import ManufacturingSteps from "@/components/ManufacturingSteps";
 import ArtisanAvatar from "@/components/ArtisanAvatar";
 import FavoriteButton from "@/components/FavoriteButton";
@@ -191,6 +192,13 @@ export default async function CraftDetailPage({
   return (
     <>
       <JsonLd data={jsonLdData} />
+      <Breadcrumb
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: craft.category, href: `/category/${encodeURIComponent(craft.category)}` },
+          { name: craft.name },
+        ]}
+      />
       {/* ヒーロー */}
       <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-[#1a1612]">
         {craft.image_url && (

@@ -7,6 +7,7 @@ import { type Craft, categoryMeta, categoryOrder, defaultMeta } from "@/lib/craf
 import { SITE_URL, SITE_NAME } from "@/lib/metadata";
 import { collectionPageJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 import JsonLd from "@/components/JsonLd";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export async function generateMetadata({
   params,
@@ -77,6 +78,13 @@ export default async function CategoryPage({
             { name: "ホーム", url: SITE_URL },
             { name: categoryName, url: categoryUrl },
           ]),
+        ]}
+      />
+      <Breadcrumb
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "工芸品目", href: "/#category" },
+          { name: categoryName },
         ]}
       />
       {/* ヒーロー */}
