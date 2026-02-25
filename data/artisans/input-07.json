@@ -1,0 +1,157 @@
+[
+  {
+    "id": "66f05083-86b7-4765-a62d-5212899e21fd",
+    "name": "羽越しな布",
+    "category": "織物"
+  },
+  {
+    "id": "0859bcb8-c2f7-4ea6-9ae9-840a131280f9",
+    "name": "西陣織",
+    "category": "織物"
+  },
+  {
+    "id": "676def46-a6dd-44ce-9495-35a8fad3f20a",
+    "name": "読谷山ミンサー",
+    "category": "織物"
+  },
+  {
+    "id": "60a7044d-12ff-48a4-8fbe-f2a3913811ba",
+    "name": "読谷山花織",
+    "category": "織物"
+  },
+  {
+    "id": "9d81461a-2745-47a2-9b1d-01bdf411f963",
+    "name": "近江上布",
+    "category": "織物"
+  },
+  {
+    "id": "4634c982-a48f-497f-8b86-a831dd81836a",
+    "name": "阿波正藍しじら織",
+    "category": "織物"
+  },
+  {
+    "id": "7336e0ae-74f9-4032-ba03-2ba123aaaea1",
+    "name": "首里織",
+    "category": "織物"
+  },
+  {
+    "id": "5c055a1e-0625-4b75-bd79-e00e9ddc0275",
+    "name": "甲州水晶貴石細工",
+    "category": "貴石細工"
+  },
+  {
+    "id": "e052915e-1945-4767-a146-449af1cb1949",
+    "name": "若狭めのう細工",
+    "category": "貴石細工"
+  },
+  {
+    "id": "d2c8a5e0-72da-4c8a-866e-cc3f2f710b29",
+    "name": "信州打刃物",
+    "category": "金工品"
+  },
+  {
+    "id": "7a0d4a6e-2002-4aa4-97a3-67f748ef0c4b",
+    "name": "千葉工匠具",
+    "category": "金工品"
+  },
+  {
+    "id": "0ea57e4c-292d-4488-9e98-6914526d7796",
+    "name": "南部鉄器",
+    "category": "金工品"
+  },
+  {
+    "id": "6633b062-051c-4e9b-8d5b-4d1b3d3b7821",
+    "name": "土佐打刃物",
+    "category": "金工品"
+  },
+  {
+    "id": "9f3feeba-cf2b-49be-8385-954f4e221245",
+    "name": "堺打刃物",
+    "category": "金工品"
+  },
+  {
+    "id": "98b20ca7-66f8-45a6-a36a-419defa46a4b",
+    "name": "大阪浪華錫器",
+    "category": "金工品"
+  },
+  {
+    "id": "c0d942f9-48f7-4171-b871-83b420d23125",
+    "name": "山形鋳物",
+    "category": "金工品"
+  },
+  {
+    "id": "1a8e3843-cec2-427a-8bf6-4eefed2a99c2",
+    "name": "播州三木打刃物",
+    "category": "金工品"
+  },
+  {
+    "id": "0a977397-838d-4d92-aec0-9029775ccb74",
+    "name": "東京アンチモニー工芸品",
+    "category": "金工品"
+  },
+  {
+    "id": "931fddd2-8e86-4e3c-a5d2-dc003f4a73ba",
+    "name": "東京銀器",
+    "category": "金工品"
+  },
+  {
+    "id": "f531e6e8-8da3-4fa3-a8cc-7ebba7a89a1d",
+    "name": "燕鎚起銅器",
+    "category": "金工品"
+  },
+  {
+    "id": "b293a7ea-ba49-4d04-9d20-853b740ed957",
+    "name": "肥後象がん",
+    "category": "金工品"
+  },
+  {
+    "id": "33734664-34c2-44a5-9bcb-9375d17b0d2f",
+    "name": "越前打刃物",
+    "category": "金工品"
+  },
+  {
+    "id": "2bd6fef1-c732-4e8a-bbbe-d45abcde91ea",
+    "name": "越後三条打刃物",
+    "category": "金工品"
+  },
+  {
+    "id": "a4430c20-a042-4428-b840-4959071f4ad0",
+    "name": "越後与板打刃物",
+    "category": "金工品"
+  },
+  {
+    "id": "960c073d-e01e-4d33-84c2-cf243e206c59",
+    "name": "高岡銅器",
+    "category": "金工品"
+  },
+  {
+    "id": "1a7ed463-1bd5-41ac-aa3f-af4d82ef6ddf",
+    "name": "三川内焼",
+    "category": "陶磁器"
+  },
+  {
+    "id": "bd40318f-37b8-446c-8a83-aef170501d53",
+    "name": "三州鬼瓦工芸品",
+    "category": "陶磁器"
+  },
+  {
+    "id": "3b54949b-b0ab-4554-aa1c-b86bf2ebde4c",
+    "name": "上野焼",
+    "category": "陶磁器"
+  },
+  {
+    "id": "9dfb15c1-a7a9-4063-952a-aa0bcd884840",
+    "name": "丹波立杭焼",
+    "category": "陶磁器"
+  },
+  {
+    "id": "a3bae37c-0dee-4c36-ba67-e9cd5a490bbc",
+    "name": "九谷焼",
+    "category": "陶磁器"
+  },
+  {
+    "id": "dbb6f3cf-33e4-4c9a-bc0a-b5072bc188e3",
+    "name": "京焼・清水焼",
+    "category": "陶磁器"
+  }
+]

@@ -1,0 +1,157 @@
+[
+  {
+    "id": "5089884b-0dfd-44f7-a000-49b413e69cc1",
+    "name": "京人形",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "cf28ffbc-3eba-49a6-82fc-2c7023691a0c",
+    "name": "博多人形",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "0071ecd9-15b2-43aa-be4b-b1ac335b48a1",
+    "name": "名古屋節句飾",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "083e7292-257b-40c4-8041-d89dab53618d",
+    "name": "宮城伝統こけし",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "d2eda1a2-b9f9-481d-8bdb-91ffb304540f",
+    "name": "岩槻人形",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "cab81338-114f-4af7-ad86-02f5d6bda19b",
+    "name": "江戸押絵",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "e16f9256-7224-43fb-848f-702b23419345",
+    "name": "江戸木目込人形",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "3835b660-8864-43b2-87de-e64e719ced0b",
+    "name": "江戸節句人形",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "59ec20f7-43d4-47ec-a043-bdcf8b9e69b2",
+    "name": "駿河雛人形",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "18cb5333-05b4-4c17-80a7-cbf81c37bd7a",
+    "name": "駿河雛具",
+    "category": "人形・こけし"
+  },
+  {
+    "id": "e60f4789-2a1b-475e-a4a9-3b4df986f1e7",
+    "name": "七尾仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "3fe40151-5bb6-4994-91fa-1bd8d9351dca",
+    "name": "三条仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "44129804-4337-4f75-b32d-a1c6cc867687",
+    "name": "三河仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "21a5c060-768b-48dc-ad57-4e5c3e2e09f3",
+    "name": "京仏具",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "58f092e7-c95e-4c66-b758-43eb9cd79f67",
+    "name": "京仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "2dfbbdb5-0418-4484-9e2b-384e4658c4d1",
+    "name": "八女福島仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "6eba775a-1140-4c9c-af35-a33532f31ecd",
+    "name": "名古屋仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "55c169c7-ffd6-4473-b928-5c247a1feca4",
+    "name": "大阪仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "d4e7bdd2-bbb7-414e-9c4a-079b51103933",
+    "name": "尾張仏具",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "00511454-90e6-4259-87dd-66e2992a0f69",
+    "name": "山形仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "dad1b702-331b-4209-875c-160a9e0592b3",
+    "name": "川辺仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "2b44000a-9616-4d7e-beb4-a2804fcbd685",
+    "name": "広島仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "76231d69-765a-4ad9-953b-217927e7eba5",
+    "name": "彦根仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "e4269df3-bcce-4ae6-95b1-ea3c3f87f8af",
+    "name": "新潟・白根仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "4268298f-b1a8-468b-bda4-c260c6642c16",
+    "name": "金沢仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "d6c3dbc3-124b-494a-abe8-b5d969609acf",
+    "name": "長岡仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "51bad9ad-7613-4119-b585-907cb659f4c2",
+    "name": "飯山仏壇",
+    "category": "仏壇・仏具"
+  },
+  {
+    "id": "30f8b65c-faee-4759-9c3b-4701fce8fb71",
+    "name": "内山紙",
+    "category": "和紙"
+  },
+  {
+    "id": "98e40cc4-19c7-43b6-9f04-546254e7eb41",
+    "name": "因州和紙",
+    "category": "和紙"
+  },
+  {
+    "id": "97103d4c-74f4-4a24-a15f-618d6380aa07",
+    "name": "土佐和紙",
+    "category": "和紙"
+  },
+  {
+    "id": "7eced17b-46ff-491c-9ec6-eaa99f14f93a",
+    "name": "大洲和紙",
+    "category": "和紙"
+  }
+]

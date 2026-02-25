@@ -1,0 +1,1689 @@
+[
+  {
+    "id": "52224eaa-a3e6-4e28-aef8-55cc0b8e2eda",
+    "name": "いずみガラス",
+    "category": "その他の工芸品",
+    "prefecture": "大阪府",
+    "city": ""
+  },
+  {
+    "id": "2460f8fb-2e85-48b1-9080-355a86c9fe0b",
+    "name": "三線",
+    "category": "その他の工芸品",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "70c6fb75-d1b6-47e1-adad-40ccf1a9a57d",
+    "name": "丸亀うちわ",
+    "category": "その他の工芸品",
+    "prefecture": "香川県",
+    "city": ""
+  },
+  {
+    "id": "df0ab2f6-2c98-4fd3-aa1d-5c8759af6f36",
+    "name": "京うちわ",
+    "category": "その他の工芸品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "9794b255-7a4c-4ab7-9016-032cbed82083",
+    "name": "京扇子",
+    "category": "その他の工芸品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "dd4c66ff-0d40-446c-a783-23ece451ec24",
+    "name": "京表具",
+    "category": "その他の工芸品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "e58eff6d-45e5-4541-91d6-93d3c8704e3a",
+    "name": "八女提灯",
+    "category": "その他の工芸品",
+    "prefecture": "福岡県",
+    "city": ""
+  },
+  {
+    "id": "f28fd654-be48-4e41-b769-7ea397b7a8e8",
+    "name": "天童将棋駒",
+    "category": "その他の工芸品",
+    "prefecture": "山形県",
+    "city": ""
+  },
+  {
+    "id": "9727cc28-ca05-4dfe-b6e1-eea2de2468dc",
+    "name": "尾張七宝",
+    "category": "その他の工芸品",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "cac01362-797f-4149-a09f-8b860d0433cc",
+    "name": "山鹿灯籠",
+    "category": "その他の工芸品",
+    "prefecture": "熊本県",
+    "city": ""
+  },
+  {
+    "id": "7e03fef9-ee21-42eb-a9bf-d0a0980b9a02",
+    "name": "岐阜提灯",
+    "category": "その他の工芸品",
+    "prefecture": "岐阜県",
+    "city": ""
+  },
+  {
+    "id": "fba82092-3011-4db1-b280-f2a859730c12",
+    "name": "房州うちわ",
+    "category": "その他の工芸品",
+    "prefecture": "千葉県",
+    "city": ""
+  },
+  {
+    "id": "2cd83407-0dc3-4225-a2b0-184f2cfd9e08",
+    "name": "播州毛鉤",
+    "category": "その他の工芸品",
+    "prefecture": "兵庫県",
+    "city": ""
+  },
+  {
+    "id": "e80ff62f-0f4a-495e-adab-44a0848619bc",
+    "name": "東京三味線",
+    "category": "その他の工芸品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "e620d22b-c470-4d36-8654-003036d5f3f2",
+    "name": "東京手彫り印章",
+    "category": "その他の工芸品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "ed1755b3-fc51-4f73-8f02-7bb7e79b32aa",
+    "name": "東京琴",
+    "category": "その他の工芸品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "a52a1574-905c-4adf-ae73-f25211859e9a",
+    "name": "江戸からかみ",
+    "category": "その他の工芸品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "4697e0ba-76e6-447e-9e4b-48dc13bde287",
+    "name": "江戸べっ甲",
+    "category": "その他の工芸品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "130b85be-b5f6-4b05-9973-e46356a82a2b",
+    "name": "江戸切子",
+    "category": "その他の工芸品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "e74964d6-722a-4c7f-895c-69dee62cbc57",
+    "name": "江戸木版画",
+    "category": "その他の工芸品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "0d46a477-cf08-4f46-8dbb-fe1583829484",
+    "name": "江戸硝子",
+    "category": "その他の工芸品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "b789a3b2-417a-42c4-a3fd-f6f451cce796",
+    "name": "江戸表具",
+    "category": "その他の工芸品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "da2aabe4-1009-4916-994e-c54059273464",
+    "name": "甲州印伝",
+    "category": "その他の工芸品",
+    "prefecture": "山梨県",
+    "city": ""
+  },
+  {
+    "id": "9cab38c4-ddac-45b3-a26a-a83bb7f31bda",
+    "name": "甲州手彫印章",
+    "category": "その他の工芸品",
+    "prefecture": "山梨県",
+    "city": ""
+  },
+  {
+    "id": "a406c2de-a6b4-40ff-aa5a-f909a780d4ad",
+    "name": "福山琴",
+    "category": "その他の工芸品",
+    "prefecture": "広島県",
+    "city": ""
+  },
+  {
+    "id": "0b5eb04d-1428-42b8-be75-d71dc739921d",
+    "name": "越中福岡の菅笠",
+    "category": "その他の工芸品",
+    "prefecture": "富山県",
+    "city": ""
+  },
+  {
+    "id": "eca49179-3605-4d49-98e4-6b44685defe1",
+    "name": "長崎べっ甲",
+    "category": "その他の工芸品",
+    "prefecture": "長崎県",
+    "city": ""
+  },
+  {
+    "id": "1d3b9c28-bd7f-412d-a412-083826d828f9",
+    "name": "京くみひも",
+    "category": "その他繊維製品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "577fd77b-7822-4b55-ba50-f980f68c96b5",
+    "name": "京繍",
+    "category": "その他繊維製品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "f269e9fc-fbf2-4510-9456-e2c468fdbaef",
+    "name": "加賀繍",
+    "category": "その他繊維製品",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "14cd799e-b829-40bc-8e0d-469a42bbe37d",
+    "name": "行田足袋",
+    "category": "その他繊維製品",
+    "prefecture": "埼玉県",
+    "city": ""
+  },
+  {
+    "id": "5089884b-0dfd-44f7-a000-49b413e69cc1",
+    "name": "京人形",
+    "category": "人形・こけし",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "cf28ffbc-3eba-49a6-82fc-2c7023691a0c",
+    "name": "博多人形",
+    "category": "人形・こけし",
+    "prefecture": "福岡県",
+    "city": ""
+  },
+  {
+    "id": "0071ecd9-15b2-43aa-be4b-b1ac335b48a1",
+    "name": "名古屋節句飾",
+    "category": "人形・こけし",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "083e7292-257b-40c4-8041-d89dab53618d",
+    "name": "宮城伝統こけし",
+    "category": "人形・こけし",
+    "prefecture": "宮城県",
+    "city": ""
+  },
+  {
+    "id": "d2eda1a2-b9f9-481d-8bdb-91ffb304540f",
+    "name": "岩槻人形",
+    "category": "人形・こけし",
+    "prefecture": "埼玉県",
+    "city": ""
+  },
+  {
+    "id": "cab81338-114f-4af7-ad86-02f5d6bda19b",
+    "name": "江戸押絵",
+    "category": "人形・こけし",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "e16f9256-7224-43fb-848f-702b23419345",
+    "name": "江戸木目込人形",
+    "category": "人形・こけし",
+    "prefecture": "埼玉県",
+    "city": ""
+  },
+  {
+    "id": "3835b660-8864-43b2-87de-e64e719ced0b",
+    "name": "江戸節句人形",
+    "category": "人形・こけし",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "59ec20f7-43d4-47ec-a043-bdcf8b9e69b2",
+    "name": "駿河雛人形",
+    "category": "人形・こけし",
+    "prefecture": "静岡県",
+    "city": ""
+  },
+  {
+    "id": "18cb5333-05b4-4c17-80a7-cbf81c37bd7a",
+    "name": "駿河雛具",
+    "category": "人形・こけし",
+    "prefecture": "静岡県",
+    "city": ""
+  },
+  {
+    "id": "e60f4789-2a1b-475e-a4a9-3b4df986f1e7",
+    "name": "七尾仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "3fe40151-5bb6-4994-91fa-1bd8d9351dca",
+    "name": "三条仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "44129804-4337-4f75-b32d-a1c6cc867687",
+    "name": "三河仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "21a5c060-768b-48dc-ad57-4e5c3e2e09f3",
+    "name": "京仏具",
+    "category": "仏壇・仏具",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "58f092e7-c95e-4c66-b758-43eb9cd79f67",
+    "name": "京仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "2dfbbdb5-0418-4484-9e2b-384e4658c4d1",
+    "name": "八女福島仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "福岡県",
+    "city": ""
+  },
+  {
+    "id": "6eba775a-1140-4c9c-af35-a33532f31ecd",
+    "name": "名古屋仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "55c169c7-ffd6-4473-b928-5c247a1feca4",
+    "name": "大阪仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "大阪府",
+    "city": ""
+  },
+  {
+    "id": "d4e7bdd2-bbb7-414e-9c4a-079b51103933",
+    "name": "尾張仏具",
+    "category": "仏壇・仏具",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "00511454-90e6-4259-87dd-66e2992a0f69",
+    "name": "山形仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "山形県",
+    "city": ""
+  },
+  {
+    "id": "dad1b702-331b-4209-875c-160a9e0592b3",
+    "name": "川辺仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "鹿児島県",
+    "city": ""
+  },
+  {
+    "id": "2b44000a-9616-4d7e-beb4-a2804fcbd685",
+    "name": "広島仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "広島県",
+    "city": ""
+  },
+  {
+    "id": "76231d69-765a-4ad9-953b-217927e7eba5",
+    "name": "彦根仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "滋賀県",
+    "city": ""
+  },
+  {
+    "id": "e4269df3-bcce-4ae6-95b1-ea3c3f87f8af",
+    "name": "新潟・白根仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "4268298f-b1a8-468b-bda4-c260c6642c16",
+    "name": "金沢仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "d6c3dbc3-124b-494a-abe8-b5d969609acf",
+    "name": "長岡仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "51bad9ad-7613-4119-b585-907cb659f4c2",
+    "name": "飯山仏壇",
+    "category": "仏壇・仏具",
+    "prefecture": "長野県",
+    "city": ""
+  },
+  {
+    "id": "30f8b65c-faee-4759-9c3b-4701fce8fb71",
+    "name": "内山紙",
+    "category": "和紙",
+    "prefecture": "長野県",
+    "city": ""
+  },
+  {
+    "id": "98e40cc4-19c7-43b6-9f04-546254e7eb41",
+    "name": "因州和紙",
+    "category": "和紙",
+    "prefecture": "鳥取県",
+    "city": ""
+  },
+  {
+    "id": "97103d4c-74f4-4a24-a15f-618d6380aa07",
+    "name": "土佐和紙",
+    "category": "和紙",
+    "prefecture": "高知県",
+    "city": ""
+  },
+  {
+    "id": "7eced17b-46ff-491c-9ec6-eaa99f14f93a",
+    "name": "大洲和紙",
+    "category": "和紙",
+    "prefecture": "愛媛県",
+    "city": ""
+  },
+  {
+    "id": "d8129187-dd93-41c9-8b95-9bd5c02c217e",
+    "name": "石州和紙",
+    "category": "和紙",
+    "prefecture": "島根県",
+    "city": ""
+  },
+  {
+    "id": "0aa5512c-6cfc-4dfe-a20b-7f90b0e2c9a0",
+    "name": "美濃和紙",
+    "category": "和紙",
+    "prefecture": "岐阜県",
+    "city": ""
+  },
+  {
+    "id": "fac8b0e6-83c5-46c2-ab70-6826540df44c",
+    "name": "越中和紙",
+    "category": "和紙",
+    "prefecture": "富山県",
+    "city": ""
+  },
+  {
+    "id": "da523088-4a91-4c36-8f6f-fefc64909c85",
+    "name": "越前和紙",
+    "category": "和紙",
+    "prefecture": "福井県",
+    "city": ""
+  },
+  {
+    "id": "68726a37-6ad9-4979-8614-6c2113881eff",
+    "name": "阿波和紙",
+    "category": "和紙",
+    "prefecture": "徳島県",
+    "city": ""
+  },
+  {
+    "id": "6b765a85-26d4-4e3b-9547-b2ee3a1201f1",
+    "name": "伊勢形紙",
+    "category": "工芸材料・工芸用具",
+    "prefecture": "三重県",
+    "city": ""
+  },
+  {
+    "id": "12e18188-c3bf-454e-8630-7ba95c256878",
+    "name": "庄川挽物木地",
+    "category": "工芸材料・工芸用具",
+    "prefecture": "富山県",
+    "city": ""
+  },
+  {
+    "id": "c9106e6e-3e73-487c-9d45-dcfd95cb33f8",
+    "name": "金沢箔",
+    "category": "工芸材料・工芸用具",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "892c4462-4517-432e-8b65-8bea3c379b2e",
+    "name": "奈良筆",
+    "category": "文具",
+    "prefecture": "奈良県",
+    "city": ""
+  },
+  {
+    "id": "99387cc0-4109-4c57-9445-c12a41bba5cf",
+    "name": "奈良墨",
+    "category": "文具",
+    "prefecture": "奈良県",
+    "city": ""
+  },
+  {
+    "id": "5f847237-e3c6-4d91-a077-0cb12ad6bf56",
+    "name": "川尻筆",
+    "category": "文具",
+    "prefecture": "広島県",
+    "city": ""
+  },
+  {
+    "id": "8659d429-d5eb-4040-8b48-e2a1a10396b4",
+    "name": "播州そろばん",
+    "category": "文具",
+    "prefecture": "兵庫県",
+    "city": ""
+  },
+  {
+    "id": "d5cbaf2a-2236-408c-99a5-6a0206df88d4",
+    "name": "熊野筆",
+    "category": "文具",
+    "prefecture": "広島県",
+    "city": ""
+  },
+  {
+    "id": "31890adb-b3fe-4752-8d75-fd3b3f51d8e4",
+    "name": "豊橋筆",
+    "category": "文具",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "78fcf6c8-c3c0-4898-acc3-30f82a60eb5b",
+    "name": "赤間硯",
+    "category": "文具",
+    "prefecture": "山口県",
+    "city": ""
+  },
+  {
+    "id": "d6e2b408-3db4-482e-9ac1-931255600f12",
+    "name": "鈴鹿墨",
+    "category": "文具",
+    "prefecture": "三重県",
+    "city": ""
+  },
+  {
+    "id": "d0b538b7-60fc-4452-8ec1-3ba92bdb1b08",
+    "name": "雄勝硯",
+    "category": "文具",
+    "prefecture": "宮城県",
+    "city": ""
+  },
+  {
+    "id": "fc6c8a2f-3aa1-4951-83ef-81bc093a8652",
+    "name": "雲州そろばん",
+    "category": "文具",
+    "prefecture": "島根県",
+    "city": ""
+  },
+  {
+    "id": "e8fc8c0e-c48b-4204-9885-35303a2382cd",
+    "name": "一位一刀彫",
+    "category": "木工品・竹工品",
+    "prefecture": "岐阜県",
+    "city": ""
+  },
+  {
+    "id": "f10af0cc-16b3-453c-94c6-56aa759f9a6f",
+    "name": "二風谷イタ",
+    "category": "木工品・竹工品",
+    "prefecture": "北海道",
+    "city": ""
+  },
+  {
+    "id": "04975739-240e-46d7-946b-326aab7d1b05",
+    "name": "井波彫刻",
+    "category": "木工品・竹工品",
+    "prefecture": "富山県",
+    "city": ""
+  },
+  {
+    "id": "5bf1b373-c563-4643-860c-fc5975cc683b",
+    "name": "京指物",
+    "category": "木工品・竹工品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "7f7b8520-0c2d-4ff6-83cb-8640f67869c9",
+    "name": "仙台箪笥",
+    "category": "木工品・竹工品",
+    "prefecture": "宮城県",
+    "city": ""
+  },
+  {
+    "id": "f7e5b8f7-d936-4029-a81c-1ac2d8895491",
+    "name": "別府竹細工",
+    "category": "木工品・竹工品",
+    "prefecture": "大分県",
+    "city": ""
+  },
+  {
+    "id": "739078ee-3ea5-40ed-a726-8171afc8dd7d",
+    "name": "加茂桐箪笥",
+    "category": "木工品・竹工品",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "2a3e9fde-3c76-411d-8cea-2b6bddadccd2",
+    "name": "勝山竹細工",
+    "category": "木工品・竹工品",
+    "prefecture": "岡山県",
+    "city": ""
+  },
+  {
+    "id": "3f228431-47aa-4984-b110-96857ce24fff",
+    "name": "南木曽ろくろ細工",
+    "category": "木工品・竹工品",
+    "prefecture": "長野県",
+    "city": ""
+  },
+  {
+    "id": "e04d5c24-fe38-45d3-8fab-abbb1a17b056",
+    "name": "名古屋桐箪笥",
+    "category": "木工品・竹工品",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "0f6bb2ba-d0a2-4cce-b6b2-fbfb8f948561",
+    "name": "大阪唐木指物",
+    "category": "木工品・竹工品",
+    "prefecture": "大阪府",
+    "city": ""
+  },
+  {
+    "id": "a47f9652-5e87-49e3-9b7b-15aac82f7290",
+    "name": "大阪欄間",
+    "category": "木工品・竹工品",
+    "prefecture": "大阪府",
+    "city": ""
+  },
+  {
+    "id": "a51be89c-589f-4cc5-8f6e-b7308905ac47",
+    "name": "大阪泉州桐箪笥",
+    "category": "木工品・竹工品",
+    "prefecture": "大阪府",
+    "city": ""
+  },
+  {
+    "id": "ab38d94a-3eb9-44e8-90e6-dbfa208a8d04",
+    "name": "大阪金剛簾",
+    "category": "木工品・竹工品",
+    "prefecture": "大阪府",
+    "city": ""
+  },
+  {
+    "id": "d90840c8-309d-4dd2-ac1d-d13ee0b9b55a",
+    "name": "大館曲げわっぱ",
+    "category": "木工品・竹工品",
+    "prefecture": "秋田県",
+    "city": ""
+  },
+  {
+    "id": "5fd3e9ab-50be-456f-88fa-d65220c7b2e4",
+    "name": "奥会津編み組細工",
+    "category": "木工品・竹工品",
+    "prefecture": "福島県",
+    "city": ""
+  },
+  {
+    "id": "2dbe63bb-fa1b-4124-926b-a2d879e39c39",
+    "name": "宮島細工",
+    "category": "木工品・竹工品",
+    "prefecture": "広島県",
+    "city": ""
+  },
+  {
+    "id": "cd4f8ba9-dd89-4cf8-bbe9-8cac50d4b4f8",
+    "name": "岐阜和傘",
+    "category": "木工品・竹工品",
+    "prefecture": "岐阜県",
+    "city": ""
+  },
+  {
+    "id": "d291adaf-683f-4837-91ba-f73ea149d876",
+    "name": "岩谷堂箪笥",
+    "category": "木工品・竹工品",
+    "prefecture": "岩手県",
+    "city": ""
+  },
+  {
+    "id": "f3d881f4-6d4b-4aa0-ac2e-07f06cf482ad",
+    "name": "春日部桐箪笥",
+    "category": "木工品・竹工品",
+    "prefecture": "埼玉県",
+    "city": ""
+  },
+  {
+    "id": "f80306ab-a440-4d04-bc99-9835544a666f",
+    "name": "松本家具",
+    "category": "木工品・竹工品",
+    "prefecture": "長野県",
+    "city": ""
+  },
+  {
+    "id": "2d65736f-65d6-4f7b-b49a-26443c600888",
+    "name": "樺細工",
+    "category": "木工品・竹工品",
+    "prefecture": "秋田県",
+    "city": ""
+  },
+  {
+    "id": "3545afbc-3e60-4b2a-83b9-626270e67c6c",
+    "name": "江戸和竿",
+    "category": "木工品・竹工品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "18925f13-4cc9-4061-a03e-d2f98e24a030",
+    "name": "江戸指物",
+    "category": "木工品・竹工品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "8927596a-dd21-49ad-b78a-767a9ba7c05f",
+    "name": "秋田杉桶樽",
+    "category": "木工品・竹工品",
+    "prefecture": "秋田県",
+    "city": ""
+  },
+  {
+    "id": "528f7e87-d772-46f9-bdcd-2d29d033de53",
+    "name": "箱根寄木細工",
+    "category": "木工品・竹工品",
+    "prefecture": "神奈川県",
+    "city": ""
+  },
+  {
+    "id": "bc8c3401-4220-4d13-8c1c-c64b6219ffe7",
+    "name": "紀州へら竿",
+    "category": "木工品・竹工品",
+    "prefecture": "和歌山県",
+    "city": ""
+  },
+  {
+    "id": "2c8b235d-8409-4d53-895f-594dcd2fa54e",
+    "name": "紀州箪笥",
+    "category": "木工品・竹工品",
+    "prefecture": "和歌山県",
+    "city": ""
+  },
+  {
+    "id": "183b910a-ee4c-46a6-96c8-fc192bead070",
+    "name": "豊岡杞柳細工",
+    "category": "木工品・竹工品",
+    "prefecture": "兵庫県",
+    "city": ""
+  },
+  {
+    "id": "5fadca60-4acb-4d74-a8d6-6461b25d49d3",
+    "name": "越前箪笥",
+    "category": "木工品・竹工品",
+    "prefecture": "福井県",
+    "city": ""
+  },
+  {
+    "id": "bcad47e9-82cf-4e7a-8c15-47e74ea2ae95",
+    "name": "都城大弓",
+    "category": "木工品・竹工品",
+    "prefecture": "宮崎県",
+    "city": ""
+  },
+  {
+    "id": "682221ee-3be5-4191-807d-315ea1ee21a0",
+    "name": "駿河竹千筋細工",
+    "category": "木工品・竹工品",
+    "prefecture": "静岡県",
+    "city": ""
+  },
+  {
+    "id": "0c60255a-0cd3-42c0-b9bf-640497fc3f1c",
+    "name": "高山茶筌",
+    "category": "木工品・竹工品",
+    "prefecture": "奈良県",
+    "city": ""
+  },
+  {
+    "id": "3829e25b-5a7c-4f51-80a3-da8c89192409",
+    "name": "京友禅",
+    "category": "染色品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "dbe154d3-1b45-44c3-b29d-afc62d3bcdda",
+    "name": "京小紋",
+    "category": "染色品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "fdab7b0c-ed0c-41a6-8942-e362f3aac192",
+    "name": "京鹿の子絞",
+    "category": "染色品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "22c8338d-8c9f-4d8a-b618-d6c48f07d78e",
+    "name": "京黒紋付染",
+    "category": "染色品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "416db328-eab6-4cee-8c5f-75a8d755f76b",
+    "name": "加賀友禅",
+    "category": "染色品",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "febe5694-8cee-46cf-8efe-9bf79dd930ef",
+    "name": "名古屋友禅",
+    "category": "染色品",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "d80f2d06-0dd0-47e1-ab28-ff48f3036761",
+    "name": "名古屋黒紋付染",
+    "category": "染色品",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "10e87e44-b706-4720-9054-f6e67d215e73",
+    "name": "有松絞・鳴海絞",
+    "category": "染色品",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "67c8c229-22ca-4dca-a29f-8877c14caa38",
+    "name": "東京手描友禅",
+    "category": "染色品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "b105ac3b-4e2f-446e-9a16-8dfc7f4348e7",
+    "name": "東京本染注染",
+    "category": "染色品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "ac74f068-7c2a-412f-a483-4029a0d2ac10",
+    "name": "東京染小紋",
+    "category": "染色品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "a6ea351e-fab7-4839-838a-96db6b01ec97",
+    "name": "東京無地染",
+    "category": "染色品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "4aaa776b-773b-4a53-90a3-c2b4a0a22ea0",
+    "name": "浪華本染め",
+    "category": "染色品",
+    "prefecture": "大阪府",
+    "city": ""
+  },
+  {
+    "id": "fa5ae881-5f5d-4df4-8cd9-ef65167d7d20",
+    "name": "琉球びんがた",
+    "category": "染色品",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "e0256656-ce81-4c1c-9a6e-a6e420004fd9",
+    "name": "京漆器",
+    "category": "漆器",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "2236b601-d0f9-4752-861c-5b7193e060b6",
+    "name": "会津塗",
+    "category": "漆器",
+    "prefecture": "福島県",
+    "city": ""
+  },
+  {
+    "id": "df302459-bd54-4b3b-b1f8-6b4c4931dabf",
+    "name": "大内塗",
+    "category": "漆器",
+    "prefecture": "山口県",
+    "city": ""
+  },
+  {
+    "id": "f8946f91-2644-441e-a8ef-3bf15517afbf",
+    "name": "小田原漆器",
+    "category": "漆器",
+    "prefecture": "神奈川県",
+    "city": ""
+  },
+  {
+    "id": "0f408711-90f2-4d45-a87b-d07a4f777ede",
+    "name": "山中漆器",
+    "category": "漆器",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "fd653295-7273-498f-a196-740d68e674ed",
+    "name": "川連漆器",
+    "category": "漆器",
+    "prefecture": "秋田県",
+    "city": ""
+  },
+  {
+    "id": "666b0d8e-acb0-4cdb-8591-1bafadecdbb9",
+    "name": "新潟漆器",
+    "category": "漆器",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "fa8004f8-dbb8-44f9-864a-a6c0610a127c",
+    "name": "木曽漆器",
+    "category": "漆器",
+    "prefecture": "長野県",
+    "city": ""
+  },
+  {
+    "id": "7c56d39d-186b-4e1d-bc9b-c6a6886a0f27",
+    "name": "村上木彫堆朱",
+    "category": "漆器",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "a9916671-714b-4d5c-ba28-fec36170bae3",
+    "name": "津軽塗",
+    "category": "漆器",
+    "prefecture": "青森県",
+    "city": ""
+  },
+  {
+    "id": "6cbe76c3-e280-4c5f-a09c-97c37440f504",
+    "name": "浄法寺塗",
+    "category": "漆器",
+    "prefecture": "岩手県",
+    "city": ""
+  },
+  {
+    "id": "385801c9-1e19-4996-8f02-4ad602bf01b2",
+    "name": "琉球漆器",
+    "category": "漆器",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "5179349d-b83c-4f3e-af87-b79a2b6baf7b",
+    "name": "秀衡塗",
+    "category": "漆器",
+    "prefecture": "岩手県",
+    "city": ""
+  },
+  {
+    "id": "9a86aa25-cf4d-4501-b062-5583540a52a9",
+    "name": "紀州漆器",
+    "category": "漆器",
+    "prefecture": "和歌山県",
+    "city": ""
+  },
+  {
+    "id": "d3d2f079-5867-47c4-b14f-60ac6bb1defb",
+    "name": "若狭塗",
+    "category": "漆器",
+    "prefecture": "福井県",
+    "city": ""
+  },
+  {
+    "id": "49147025-f9fa-4adf-8349-d66dd9e09d49",
+    "name": "越前漆器",
+    "category": "漆器",
+    "prefecture": "福井県",
+    "city": ""
+  },
+  {
+    "id": "11d689ee-a9fa-4576-9a82-56e9a75b189b",
+    "name": "輪島塗",
+    "category": "漆器",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "678d3b66-609c-45c8-ab07-3051fec207df",
+    "name": "金沢漆器",
+    "category": "漆器",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "fc096b31-d25c-4844-9a3a-df31c0a1f058",
+    "name": "鎌倉彫",
+    "category": "漆器",
+    "prefecture": "神奈川県",
+    "city": ""
+  },
+  {
+    "id": "f303163e-0a29-4474-9499-f241aed8a338",
+    "name": "飛騨春慶",
+    "category": "漆器",
+    "prefecture": "岐阜県",
+    "city": ""
+  },
+  {
+    "id": "67b425a5-ded5-4a19-a3d8-04edfcd039b6",
+    "name": "香川漆器",
+    "category": "漆器",
+    "prefecture": "香川県",
+    "city": ""
+  },
+  {
+    "id": "92952355-b4f8-4b7c-9d3f-78ea55622177",
+    "name": "高岡漆器",
+    "category": "漆器",
+    "prefecture": "富山県",
+    "city": ""
+  },
+  {
+    "id": "efd975f3-bba4-4a84-ba24-8c6cb2f205b7",
+    "name": "鳴子漆器",
+    "category": "漆器",
+    "prefecture": "宮城県",
+    "city": ""
+  },
+  {
+    "id": "25a1ba9a-8820-4a36-b33d-f203d2ffbc36",
+    "name": "京石工芸品",
+    "category": "石工品",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "f681bbdd-9b25-4073-95c5-9af80f61c4cf",
+    "name": "出雲石燈ろう",
+    "category": "石工品",
+    "prefecture": "島根県",
+    "city": ""
+  },
+  {
+    "id": "83546fd9-f0eb-41e9-8c19-aaf8a0e6cb93",
+    "name": "岡崎石工品",
+    "category": "石工品",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "5649a37b-22d8-47f6-b607-ff3e2c6761b4",
+    "name": "真壁石燈籍",
+    "category": "石工品",
+    "prefecture": "茨城県",
+    "city": ""
+  },
+  {
+    "id": "1bdb6ef6-5d85-4cd0-bd70-4cd9d3d09812",
+    "name": "与那国織",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "0ce4ed86-18d6-4cce-a8c6-9b4aa687c61c",
+    "name": "久留米絣",
+    "category": "織物",
+    "prefecture": "福岡県",
+    "city": ""
+  },
+  {
+    "id": "8d93fbcb-dc21-47f0-bc9f-299e40bf8677",
+    "name": "久米島紬",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "2063c43f-10b9-4783-bf39-ef06afd84a8b",
+    "name": "二風谷アットゥㇱ",
+    "category": "織物",
+    "prefecture": "北海道",
+    "city": ""
+  },
+  {
+    "id": "e0c24cf9-9603-4768-a8d1-4381dcb8e521",
+    "name": "伊勢崎絣",
+    "category": "織物",
+    "prefecture": "群馬県",
+    "city": ""
+  },
+  {
+    "id": "95442a0e-c205-4711-bf62-56bb558170fa",
+    "name": "信州紬",
+    "category": "織物",
+    "prefecture": "長野県",
+    "city": ""
+  },
+  {
+    "id": "e3d30634-d70c-4a5e-bacd-d55410457c04",
+    "name": "八重山ミンサー",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "e89acf2b-9bd8-4f79-8287-950bb62984e6",
+    "name": "八重山上布",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "be46d3e9-f8e9-433c-bb4b-e35c584bad94",
+    "name": "十日町明石ちぢみ",
+    "category": "織物",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "32513942-af2b-4329-ae6c-c1cdbb0a1074",
+    "name": "十日町絣",
+    "category": "織物",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "d406a47b-257b-441c-adf5-628ffad86558",
+    "name": "南風原花織",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "7ea8bb67-628b-44d0-88cb-42d3c99bdb42",
+    "name": "博多織",
+    "category": "織物",
+    "prefecture": "福岡県",
+    "city": ""
+  },
+  {
+    "id": "8c6ff872-c2c3-4190-bde6-fd2301a5af63",
+    "name": "喜如嘉の芭蕉布",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "82ba30d5-2ef8-4d25-b30d-01ec078aab17",
+    "name": "塩沢紬",
+    "category": "織物",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "849ebf0b-b6dc-4707-9727-d08284213fbd",
+    "name": "多摩織",
+    "category": "織物",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "be9f5bcd-12a3-44e8-80ba-0ed3b2f4a2c0",
+    "name": "奥会津昭和からむし織",
+    "category": "織物",
+    "prefecture": "福島県",
+    "city": ""
+  },
+  {
+    "id": "5cecd9ae-8d17-453a-924a-9a1a71251096",
+    "name": "宮古上布",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "29b8c7cb-7850-4b34-bf4d-10b88d5a2ad7",
+    "name": "小千谷紬",
+    "category": "織物",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "6c843264-70eb-436e-84e3-b4143f8874e5",
+    "name": "小千谷縮",
+    "category": "織物",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "9af14fdf-c57d-4e86-b214-c9b8167b8dd2",
+    "name": "弓浜絣",
+    "category": "織物",
+    "prefecture": "鳥取県",
+    "city": ""
+  },
+  {
+    "id": "292a77c8-092d-4a6b-b2d7-6cb91221b200",
+    "name": "本場大島紬",
+    "category": "織物",
+    "prefecture": "鹿児島県",
+    "city": ""
+  },
+  {
+    "id": "1c575603-6b31-477b-a3f2-38008ed66244",
+    "name": "本場黄八丈",
+    "category": "織物",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "ada81efc-31f4-4202-9ec3-1dd27684d36b",
+    "name": "本塩沢",
+    "category": "織物",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "ee4f0e3d-0d48-4445-8135-89a542c81734",
+    "name": "村山大島紬",
+    "category": "織物",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "8869f5d5-a10c-4010-a4a9-3c832d0bbe65",
+    "name": "桐生織",
+    "category": "織物",
+    "prefecture": "群馬県",
+    "city": ""
+  },
+  {
+    "id": "fcf9a270-8ba5-462a-8c90-973c63c92481",
+    "name": "牛首紬",
+    "category": "織物",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "41d82953-9344-4081-bb9a-193db543973b",
+    "name": "琉球絣",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "a34c356d-857b-429e-8885-020f463e2114",
+    "name": "知花花織",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "67835301-9097-493e-9bcb-4be62f1c8a97",
+    "name": "秩父銘仙",
+    "category": "織物",
+    "prefecture": "埼玉県",
+    "city": ""
+  },
+  {
+    "id": "6b8ec207-caf3-4036-b367-9923db9c6b04",
+    "name": "結城紬",
+    "category": "織物",
+    "prefecture": "茨城県",
+    "city": ""
+  },
+  {
+    "id": "5f074f21-6d59-40ef-b12d-d4721044ae30",
+    "name": "置賜紬",
+    "category": "織物",
+    "prefecture": "山形県",
+    "city": ""
+  },
+  {
+    "id": "66f05083-86b7-4765-a62d-5212899e21fd",
+    "name": "羽越しな布",
+    "category": "織物",
+    "prefecture": "山形県",
+    "city": ""
+  },
+  {
+    "id": "0859bcb8-c2f7-4ea6-9ae9-840a131280f9",
+    "name": "西陣織",
+    "category": "織物",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "676def46-a6dd-44ce-9495-35a8fad3f20a",
+    "name": "読谷山ミンサー",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "60a7044d-12ff-48a4-8fbe-f2a3913811ba",
+    "name": "読谷山花織",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "9d81461a-2745-47a2-9b1d-01bdf411f963",
+    "name": "近江上布",
+    "category": "織物",
+    "prefecture": "滋賀県",
+    "city": ""
+  },
+  {
+    "id": "4634c982-a48f-497f-8b86-a831dd81836a",
+    "name": "阿波正藍しじら織",
+    "category": "織物",
+    "prefecture": "徳島県",
+    "city": ""
+  },
+  {
+    "id": "7336e0ae-74f9-4032-ba03-2ba123aaaea1",
+    "name": "首里織",
+    "category": "織物",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "5c055a1e-0625-4b75-bd79-e00e9ddc0275",
+    "name": "甲州水晶貴石細工",
+    "category": "貴石細工",
+    "prefecture": "山梨県",
+    "city": ""
+  },
+  {
+    "id": "e052915e-1945-4767-a146-449af1cb1949",
+    "name": "若狭めのう細工",
+    "category": "貴石細工",
+    "prefecture": "福井県",
+    "city": ""
+  },
+  {
+    "id": "d2c8a5e0-72da-4c8a-866e-cc3f2f710b29",
+    "name": "信州打刃物",
+    "category": "金工品",
+    "prefecture": "長野県",
+    "city": ""
+  },
+  {
+    "id": "7a0d4a6e-2002-4aa4-97a3-67f748ef0c4b",
+    "name": "千葉工匠具",
+    "category": "金工品",
+    "prefecture": "千葉県",
+    "city": ""
+  },
+  {
+    "id": "0ea57e4c-292d-4488-9e98-6914526d7796",
+    "name": "南部鉄器",
+    "category": "金工品",
+    "prefecture": "岩手県",
+    "city": ""
+  },
+  {
+    "id": "6633b062-051c-4e9b-8d5b-4d1b3d3b7821",
+    "name": "土佐打刃物",
+    "category": "金工品",
+    "prefecture": "高知県",
+    "city": ""
+  },
+  {
+    "id": "9f3feeba-cf2b-49be-8385-954f4e221245",
+    "name": "堺打刃物",
+    "category": "金工品",
+    "prefecture": "大阪府",
+    "city": ""
+  },
+  {
+    "id": "98b20ca7-66f8-45a6-a36a-419defa46a4b",
+    "name": "大阪浪華錫器",
+    "category": "金工品",
+    "prefecture": "大阪府",
+    "city": ""
+  },
+  {
+    "id": "c0d942f9-48f7-4171-b871-83b420d23125",
+    "name": "山形鋳物",
+    "category": "金工品",
+    "prefecture": "山形県",
+    "city": ""
+  },
+  {
+    "id": "1a8e3843-cec2-427a-8bf6-4eefed2a99c2",
+    "name": "播州三木打刃物",
+    "category": "金工品",
+    "prefecture": "兵庫県",
+    "city": ""
+  },
+  {
+    "id": "0a977397-838d-4d92-aec0-9029775ccb74",
+    "name": "東京アンチモニー工芸品",
+    "category": "金工品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "931fddd2-8e86-4e3c-a5d2-dc003f4a73ba",
+    "name": "東京銀器",
+    "category": "金工品",
+    "prefecture": "東京都",
+    "city": ""
+  },
+  {
+    "id": "f531e6e8-8da3-4fa3-a8cc-7ebba7a89a1d",
+    "name": "燕鎚起銅器",
+    "category": "金工品",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "b293a7ea-ba49-4d04-9d20-853b740ed957",
+    "name": "肥後象がん",
+    "category": "金工品",
+    "prefecture": "熊本県",
+    "city": ""
+  },
+  {
+    "id": "33734664-34c2-44a5-9bcb-9375d17b0d2f",
+    "name": "越前打刃物",
+    "category": "金工品",
+    "prefecture": "福井県",
+    "city": ""
+  },
+  {
+    "id": "2bd6fef1-c732-4e8a-bbbe-d45abcde91ea",
+    "name": "越後三条打刃物",
+    "category": "金工品",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "a4430c20-a042-4428-b840-4959071f4ad0",
+    "name": "越後与板打刃物",
+    "category": "金工品",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "960c073d-e01e-4d33-84c2-cf243e206c59",
+    "name": "高岡銅器",
+    "category": "金工品",
+    "prefecture": "富山県",
+    "city": ""
+  },
+  {
+    "id": "1a7ed463-1bd5-41ac-aa3f-af4d82ef6ddf",
+    "name": "三川内焼",
+    "category": "陶磁器",
+    "prefecture": "長崎県",
+    "city": ""
+  },
+  {
+    "id": "bd40318f-37b8-446c-8a83-aef170501d53",
+    "name": "三州鬼瓦工芸品",
+    "category": "陶磁器",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "3b54949b-b0ab-4554-aa1c-b86bf2ebde4c",
+    "name": "上野焼",
+    "category": "陶磁器",
+    "prefecture": "福岡県",
+    "city": ""
+  },
+  {
+    "id": "9dfb15c1-a7a9-4063-952a-aa0bcd884840",
+    "name": "丹波立杭焼",
+    "category": "陶磁器",
+    "prefecture": "兵庫県",
+    "city": ""
+  },
+  {
+    "id": "a3bae37c-0dee-4c36-ba67-e9cd5a490bbc",
+    "name": "九谷焼",
+    "category": "陶磁器",
+    "prefecture": "石川県",
+    "city": ""
+  },
+  {
+    "id": "dbb6f3cf-33e4-4c9a-bc0a-b5072bc188e3",
+    "name": "京焼・清水焼",
+    "category": "陶磁器",
+    "prefecture": "京都府",
+    "city": ""
+  },
+  {
+    "id": "b6fb4d83-a828-4b62-8080-5a189009de3a",
+    "name": "伊賀焼",
+    "category": "陶磁器",
+    "prefecture": "三重県",
+    "city": ""
+  },
+  {
+    "id": "35363e4f-3265-4b73-89a3-7c1c5ffb50c0",
+    "name": "会津本郷焼",
+    "category": "陶磁器",
+    "prefecture": "福島県",
+    "city": ""
+  },
+  {
+    "id": "ba72994b-fe3e-40de-8b58-3929a6aa97e6",
+    "name": "佐渡無名異焼",
+    "category": "陶磁器",
+    "prefecture": "新潟県",
+    "city": ""
+  },
+  {
+    "id": "b20580f7-061c-498f-9a28-e127d3388cfe",
+    "name": "信楽焼",
+    "category": "陶磁器",
+    "prefecture": "滋賀県",
+    "city": ""
+  },
+  {
+    "id": "b783e502-8dbe-444f-b7de-3d9306c8192d",
+    "name": "出石焼",
+    "category": "陶磁器",
+    "prefecture": "兵庫県",
+    "city": ""
+  },
+  {
+    "id": "c922ba8f-a030-4934-8fd9-f72e3f443d1f",
+    "name": "唐津焼",
+    "category": "陶磁器",
+    "prefecture": "佐賀県",
+    "city": ""
+  },
+  {
+    "id": "c2ba6dfb-ad00-4580-a0d2-f38a7bb8eabd",
+    "name": "四日市萬古焼",
+    "category": "陶磁器",
+    "prefecture": "三重県",
+    "city": ""
+  },
+  {
+    "id": "774b6e87-9300-4931-ab10-90b4030a7e1d",
+    "name": "壺屋焼",
+    "category": "陶磁器",
+    "prefecture": "沖縄県",
+    "city": ""
+  },
+  {
+    "id": "98f0be09-1c55-4f9c-b65e-3a5aec90dcea",
+    "name": "大堀相馬焼",
+    "category": "陶磁器",
+    "prefecture": "福島県",
+    "city": ""
+  },
+  {
+    "id": "2cd0582c-e042-41c6-b517-82c8ab9b19bc",
+    "name": "大谷焼",
+    "category": "陶磁器",
+    "prefecture": "徳島県",
+    "city": ""
+  },
+  {
+    "id": "2312d146-ace8-41ba-8a06-a905ea00ca29",
+    "name": "天草陶磁器",
+    "category": "陶磁器",
+    "prefecture": "熊本県",
+    "city": ""
+  },
+  {
+    "id": "de939b93-e6e1-4db2-9dcb-d22e62ea27b2",
+    "name": "小代焼",
+    "category": "陶磁器",
+    "prefecture": "熊本県",
+    "city": ""
+  },
+  {
+    "id": "b7a6fbf6-b346-4108-88e5-509af338446a",
+    "name": "小石原焼",
+    "category": "陶磁器",
+    "prefecture": "福岡県",
+    "city": ""
+  },
+  {
+    "id": "cd4a45ef-a3ad-4fa1-940d-25023e219127",
+    "name": "常滑焼",
+    "category": "陶磁器",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "87121730-3a80-472b-bcef-f5a4c3ebb1f7",
+    "name": "波佐見焼",
+    "category": "陶磁器",
+    "prefecture": "長崎県",
+    "city": ""
+  },
+  {
+    "id": "9116438c-1a82-4174-ae50-5d97c08afa5d",
+    "name": "瀬戸染付焼",
+    "category": "陶磁器",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "d3cd47d4-1613-47b8-a584-40cfc49797a1",
+    "name": "益子焼",
+    "category": "陶磁器",
+    "prefecture": "栃木県",
+    "city": ""
+  },
+  {
+    "id": "97d968be-801f-42f3-a730-406acd74acca",
+    "name": "石見焼",
+    "category": "陶磁器",
+    "prefecture": "島根県",
+    "city": ""
+  },
+  {
+    "id": "0a35880e-f2f3-4f3a-bff3-b881250fe61c",
+    "name": "砥部焼",
+    "category": "陶磁器",
+    "prefecture": "愛媛県",
+    "city": ""
+  },
+  {
+    "id": "3019ce3c-28ba-4217-b22e-4be0aaf8e304",
+    "name": "笠間焼",
+    "category": "陶磁器",
+    "prefecture": "茨城県",
+    "city": ""
+  },
+  {
+    "id": "4f961447-6ef9-4491-b7ce-123f8e158415",
+    "name": "美濃焼",
+    "category": "陶磁器",
+    "prefecture": "岐阜県",
+    "city": ""
+  },
+  {
+    "id": "80dbec11-5f4b-4183-b46b-c7a7b0af3eba",
+    "name": "萩焼",
+    "category": "陶磁器",
+    "prefecture": "山口県",
+    "city": ""
+  },
+  {
+    "id": "dede4f1a-12ad-4cb1-8bc2-ea4cf7d6c814",
+    "name": "薩摩焼",
+    "category": "陶磁器",
+    "prefecture": "鹿児島県",
+    "city": ""
+  },
+  {
+    "id": "1ef4ccd9-6ae1-422a-9a59-21a7b83a9580",
+    "name": "赤津焼",
+    "category": "陶磁器",
+    "prefecture": "愛知県",
+    "city": ""
+  },
+  {
+    "id": "6a93ee61-82ab-4f2c-8d32-ad632f7a966d",
+    "name": "越前焼",
+    "category": "陶磁器",
+    "prefecture": "福井県",
+    "city": ""
+  }
+]

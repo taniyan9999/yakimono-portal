@@ -1,0 +1,157 @@
+[
+  {
+    "id": "d8129187-dd93-41c9-8b95-9bd5c02c217e",
+    "name": "石州和紙",
+    "category": "和紙"
+  },
+  {
+    "id": "0aa5512c-6cfc-4dfe-a20b-7f90b0e2c9a0",
+    "name": "美濃和紙",
+    "category": "和紙"
+  },
+  {
+    "id": "fac8b0e6-83c5-46c2-ab70-6826540df44c",
+    "name": "越中和紙",
+    "category": "和紙"
+  },
+  {
+    "id": "da523088-4a91-4c36-8f6f-fefc64909c85",
+    "name": "越前和紙",
+    "category": "和紙"
+  },
+  {
+    "id": "68726a37-6ad9-4979-8614-6c2113881eff",
+    "name": "阿波和紙",
+    "category": "和紙"
+  },
+  {
+    "id": "6b765a85-26d4-4e3b-9547-b2ee3a1201f1",
+    "name": "伊勢形紙",
+    "category": "工芸材料・工芸用具"
+  },
+  {
+    "id": "12e18188-c3bf-454e-8630-7ba95c256878",
+    "name": "庄川挽物木地",
+    "category": "工芸材料・工芸用具"
+  },
+  {
+    "id": "c9106e6e-3e73-487c-9d45-dcfd95cb33f8",
+    "name": "金沢箔",
+    "category": "工芸材料・工芸用具"
+  },
+  {
+    "id": "892c4462-4517-432e-8b65-8bea3c379b2e",
+    "name": "奈良筆",
+    "category": "文具"
+  },
+  {
+    "id": "99387cc0-4109-4c57-9445-c12a41bba5cf",
+    "name": "奈良墨",
+    "category": "文具"
+  },
+  {
+    "id": "5f847237-e3c6-4d91-a077-0cb12ad6bf56",
+    "name": "川尻筆",
+    "category": "文具"
+  },
+  {
+    "id": "8659d429-d5eb-4040-8b48-e2a1a10396b4",
+    "name": "播州そろばん",
+    "category": "文具"
+  },
+  {
+    "id": "d5cbaf2a-2236-408c-99a5-6a0206df88d4",
+    "name": "熊野筆",
+    "category": "文具"
+  },
+  {
+    "id": "31890adb-b3fe-4752-8d75-fd3b3f51d8e4",
+    "name": "豊橋筆",
+    "category": "文具"
+  },
+  {
+    "id": "78fcf6c8-c3c0-4898-acc3-30f82a60eb5b",
+    "name": "赤間硯",
+    "category": "文具"
+  },
+  {
+    "id": "d6e2b408-3db4-482e-9ac1-931255600f12",
+    "name": "鈴鹿墨",
+    "category": "文具"
+  },
+  {
+    "id": "d0b538b7-60fc-4452-8ec1-3ba92bdb1b08",
+    "name": "雄勝硯",
+    "category": "文具"
+  },
+  {
+    "id": "fc6c8a2f-3aa1-4951-83ef-81bc093a8652",
+    "name": "雲州そろばん",
+    "category": "文具"
+  },
+  {
+    "id": "e8fc8c0e-c48b-4204-9885-35303a2382cd",
+    "name": "一位一刀彫",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "f10af0cc-16b3-453c-94c6-56aa759f9a6f",
+    "name": "二風谷イタ",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "04975739-240e-46d7-946b-326aab7d1b05",
+    "name": "井波彫刻",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "5bf1b373-c563-4643-860c-fc5975cc683b",
+    "name": "京指物",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "7f7b8520-0c2d-4ff6-83cb-8640f67869c9",
+    "name": "仙台箪笥",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "f7e5b8f7-d936-4029-a81c-1ac2d8895491",
+    "name": "別府竹細工",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "739078ee-3ea5-40ed-a726-8171afc8dd7d",
+    "name": "加茂桐箪笥",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "2a3e9fde-3c76-411d-8cea-2b6bddadccd2",
+    "name": "勝山竹細工",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "3f228431-47aa-4984-b110-96857ce24fff",
+    "name": "南木曽ろくろ細工",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "e04d5c24-fe38-45d3-8fab-abbb1a17b056",
+    "name": "名古屋桐箪笥",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "0f6bb2ba-d0a2-4cce-b6b2-fbfb8f948561",
+    "name": "大阪唐木指物",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "a47f9652-5e87-49e3-9b7b-15aac82f7290",
+    "name": "大阪欄間",
+    "category": "木工品・竹工品"
+  },
+  {
+    "id": "a51be89c-589f-4cc5-8f6e-b7308905ac47",
+    "name": "大阪泉州桐箪笥",
+    "category": "木工品・竹工品"
+  }
+]
